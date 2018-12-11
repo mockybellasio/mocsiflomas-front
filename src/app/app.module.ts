@@ -29,7 +29,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModul,
+    MDBBootstrapModulee
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
