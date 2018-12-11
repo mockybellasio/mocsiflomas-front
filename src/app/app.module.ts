@@ -4,15 +4,17 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AccueilComponent } from './accueil/accueil.component';
 import { AppComponent } from './app.component';
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthComponent } from './auth/auth.component';
 import { StatutConnecteService } from "./auth/statut-connecte.service";
-import { TechComponent } from './tech/tech.component';
-import { AccueilComponent } from './accueil/accueil.component';
-import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
 import { MenuAdministrateurComponent } from './menu/menu-administrateur/menu-administrateur.component';
-import { MenuUtilisateurComponent } from './menu/menu-utilisateur/menu-utilisateur.component'
+import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
+import { TechComponent } from './tech/tech.component';
+import { DetailsProduitsComponent } from './details-produits/details-produits.component';
+import { EnvironnementComponent } from './environnement/environnement.component';
+import { EnvironmentComponent } from './environment/environment.component';
 
 
 const routes: Routes = [
@@ -31,8 +33,11 @@ const routes: Routes = [
     AuthComponent,
     AccueilComponent,
     MenuVisiteurComponent,
-    MenuAdministrateurComponent,
-    MenuUtilisateurComponent
+    MenuAdministrateurComponen,
+    DetailsProduitsComponent,
+    EnvironnementComponent,
+    EnvironmentComponentt,
+  
   ],
   imports: [
     BrowserModule,
