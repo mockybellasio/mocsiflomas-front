@@ -12,11 +12,13 @@ import { TechComponent } from './tech/tech.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
 import { MenuAdministrateurComponent } from './menu/menu-administrateur/menu-administrateur.component';
-import { MenuUtilisateurComponent } from './menu/menu-utilisateur/menu-utilisateur.component'
+import { MenuUtilisateurComponent } from './menu/menu-utilisateur/menu-utilisateur.component';
+import { FormInscriptionComponent } from './form-inscription/form-inscription.component'
 
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
+  { path: 'inscription', component: FormInscriptionComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -32,15 +34,16 @@ const routes: Routes = [
     AccueilComponent,
     MenuVisiteurComponent,
     MenuAdministrateurComponent,
-    MenuUtilisateurComponent
+    MenuUtilisateurComponent,
+    FormInscriptionComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModul,
-    MDBBootstrapModulee
+    FormsModule,
+    MDBBootstrapModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
