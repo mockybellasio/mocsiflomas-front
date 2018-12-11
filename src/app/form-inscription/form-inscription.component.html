@@ -1,5 +1,5 @@
 <!-- Default form register -->
-<form class="text-center border border-light p-5">
+<form (ngSubmit)="submit()" #monForm="ngForm" class="text-center border border-light p-5">
 
     <p class="h4 mb-4">Inscription</p>
 
@@ -44,11 +44,8 @@
 
     <input class="form-control" type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
 
-    <button class="btn btn-md btn-primary" (click)="startUpload()">Start uploading</button>
-
-
     <!-- Sign up button -->
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+    <button mdbBtn color="info" block="true" class="my-4" [disabled]="!monForm.valid" type="submit">Sign in</button>
 
     <hr>
 
@@ -58,4 +55,5 @@
         <a href="" target="_blank">terms of service</a>. </p>
 
 </form>
+<img *ngIf="img!=undefined" src="{img}">
 <!-- Default form register -->
