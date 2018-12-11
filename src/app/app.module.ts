@@ -1,20 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-
-import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import { TechComponent } from './tech/tech.component';
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AppComponent } from './app.component';
+import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthComponent } from './auth/auth.component';
-import {FormsModule} from "@angular/forms";
-import {StatutConnecteService} from "./auth/statut-connecte.service";
-import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import { StatutConnecteService } from "./auth/statut-connecte.service";
+import { TechComponent } from './tech/tech.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
+import { MenuAdministrateurComponent } from './menu/menu-administrateur/menu-administrateur.component';
+import { MenuUtilisateurComponent } from './menu/menu-utilisateur/menu-utilisateur.component'
+
 
 const routes: Routes = [
-  { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
-  { path:'auth', component: AuthComponent},
-  { path: '', redirectTo: '/tech', pathMatch: 'full'}
+  { path: 'accueil', component: AccueilComponent},
+  { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
+  { path: 'auth', component: AuthComponent },
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+
 ];
 
 
@@ -22,7 +28,11 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TechComponent,
-    AuthComponent
+    AuthComponent,
+    AccueilComponent,
+    MenuVisiteurComponent,
+    MenuAdministrateurComponent,
+    MenuUtilisateurComponent
   ],
   imports: [
     BrowserModule,
