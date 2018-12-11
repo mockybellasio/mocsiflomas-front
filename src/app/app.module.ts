@@ -13,8 +13,8 @@ import { MenuAdministrateurComponent } from './menu/menu-administrateur/menu-adm
 import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
 import { TechComponent } from './tech/tech.component';
 import { DetailsProduitsComponent } from './details-produits/details-produits.component';
-import { EnvironnementComponent } from './environnement/environnement.component';
-import { EnvironmentComponent } from './environment/environment.component';
+//import { EnvironnementComponent } from './environnement/environnement.component';
+// import { EnvironmentComponent } from './environment/environment.component';
 
 
 const routes: Routes = [
@@ -33,10 +33,10 @@ const routes: Routes = [
     AuthComponent,
     AccueilComponent,
     MenuVisiteurComponent,
-    MenuAdministrateurComponen,
+    MenuAdministrateurComponent,
     DetailsProduitsComponent,
-    EnvironnementComponent,
-    EnvironmentComponentt,
+   // EnvironnementComponent,
+   // EnvironmentComponent,
   
   ],
   imports: [
