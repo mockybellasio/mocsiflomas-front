@@ -3,9 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-menu-utilisateur',
   template: `
-    <p>
-      menu-utilisateur works!
-    </p>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light warning-color lighten-5">
+    [..]
+  </nav>
+  <!--/.Navbar-->
   `,
   styles: []
 })
