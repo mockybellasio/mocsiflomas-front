@@ -3,20 +3,15 @@ import { Produit } from '../ModelFolder/Produit';
 import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
-  selector: 'app-produit',
-  templateUrl: `./produit.component.html`,
+  selector: 'app-liste-produits',
+  templateUrl: './liste-produits.component.html',
   styles: []
 })
-export class ProduitComponent implements OnInit {
-  @Input() produit: Produit
-
-  constructor(private _produitService: ProduitService) {
-  }
+export class ListeProduitsComponent implements OnInit {
+  @Input() lesProduits:Produit[]
+  constructor() { }
 
   ngOnInit() {
-    
   }
+
 }
-
-
-

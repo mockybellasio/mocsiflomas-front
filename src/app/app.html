@@ -2,24 +2,28 @@
 <app-menu-utilisateur></app-menu-utilisateur>
 <app-menu-administrateur></app-menu-administrateur>
 
-<div class="">
-
+<br>
+<div class="container">
 
     <div *ngIf="!(collegueConnecte | async).estAnonyme()">
       <span>{{(collegueConnecte | async).email}}</span>
       <span>({{(collegueConnecte | async).roles}})</span>
       <a  class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
     </div>
+
+    <router-outlet></router-outlet>
+
+
   </div>
 
 
 
-
-
-  
-
-
-  <router-outlet></router-outlet>
+  <div class="container">
 
 <!-- Footer -->
-   
+<app-footer></app-footer>
+
+
+  </div>
+
+
