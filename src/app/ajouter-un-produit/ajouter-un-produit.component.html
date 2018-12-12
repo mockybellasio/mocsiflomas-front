@@ -1,0 +1,27 @@
+<h1>{{ajouterProduit.nomDelaFigurine}}</h1>
+<form (ngSubmit)="submit()" #activerBouton="ngForm">
+  <label>Nom de la figurine</label>
+  <input [(ngModel)]="ajouterProduit.nomDelaFigurine" name="nomDelaFigurine" #matricule="ngModel" required>
+  <br>
+  <label>Nom de la saga</label>
+  <input [(ngModel)]="ajouterProduit.nomDelaSaga" name="nomDelaSaga" #matricule="ngModel" required>
+  <br>
+  <label>Personnage</label>
+  <input [(ngModel)]="ajouterProduit.personnage" name="personnage" #matricule="ngModel" required>
+  <br>
+  <!-- <label>Image</label>
+  <input [(ngModel)]="ajouterProduit.image" name="nomDelaFigurine" #matricule="ngModel" required> -->
+  <br>
+  <label>Description</label>
+  <input [(ngModel)]="ajouterProduit.description" name="description" #matricule="ngModel" required>
+  <br>
+  <label>Taille</label>
+  <input [(ngModel)]="ajouterProduit.taille" name="taille" #matricule="ngModel" required>
+  <br>
+  <label>Prix</label>
+  <input [(ngModel)]="ajouterProduit.prix" name="prix" #matricule="ngModel" required>
+  <br>
+  <label>Numero de la figurine</label>
+  <input [(ngModel)]="ajouterProduit.numeroDelaFigurine" name="numeroDelaFigurine" #matricule="ngModel" required>
+  <button type="submit" [disabled]="!activerBouton.valid">Submit</button>
+</form>

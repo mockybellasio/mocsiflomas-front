@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
 import { ProduitService } from '../ServiceFolder/produit.service';
 
@@ -9,16 +8,13 @@ import { ProduitService } from '../ServiceFolder/produit.service';
   styles: []
 })
 export class ProduitComponent implements OnInit {
-  produits: Produit = new Produit('Harry potter', '', 'harry potter ', 10, 30, 'figurine harry Potter ', 101)
-  // Injection du service ActivatedRoute
+  produit: Produit
 
-  constructor(private route: ActivatedRoute, private prod: ProduitService) {
-    // récupération du paramètre id
-    this.produits.personnage = this.route.snapshot.paramMap.get("personnage")
-    //this.prod.produitsParPersonnage(this.produits.personnage).then((c: Produit) => this.produits = c);
+  constructor(private _produitService: ProduitService) {
   }
 
   ngOnInit() {
+    
   }
 }
 
