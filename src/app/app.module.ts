@@ -15,6 +15,9 @@ import { MenuAdministrateurComponent } from "./menu/menu-administrateur/menu-adm
 import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisateur.component";
 import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 import { GestionProduitsComponent } from './gestion-produits/gestion-produits.component';
+import { ProduitComponent } from "./produit/produit.component";
+import { AjouterUnProduitComponent } from "./ajouter-un-produit/ajouter-un-produit.component";
+
 
 
 const routes: Routes = [
@@ -22,6 +25,7 @@ const routes: Routes = [
   { path: 'inscription', component: FormInscriptionComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
+  { path: 'ajoutProduit', component: AjouterUnProduitComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'gestion-produits', component: GestionProduitsComponent}
 ];
@@ -37,7 +41,9 @@ const routes: Routes = [
     MenuAdministrateurComponent,
     MenuUtilisateurComponent,
     MenuVisiteurComponent,
-    GestionProduitsComponent
+    GestionProduitsComponent,
+    ProduitComponent,
+    AjouterUnProduitComponent
   ],
   imports: [
     BrowserModule,
