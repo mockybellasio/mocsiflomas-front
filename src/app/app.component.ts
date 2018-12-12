@@ -9,8 +9,7 @@ import {Collegue} from "./auth/auth.domains";
  */
 @Component({
   selector: 'app-root',
-  templateUrl: './app.html',
-   
+  templateUrl: `./app.html`,
   styles: []
 })
 export class AppComponent implements OnInit {
@@ -39,4 +38,5 @@ export class AppComponent implements OnInit {
 
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
+
 }

@@ -10,10 +10,10 @@ import { AuthComponent } from './auth/auth.component';
 import { StatutConnecteService } from "./auth/statut-connecte.service";
 import { TechComponent } from './tech/tech.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { MenuVisiteurComponent } from './menu/menu-visiteur/menu-visiteur.component';
-import { MenuAdministrateurComponent } from './menu/menu-administrateur/menu-administrateur.component';
-import { MenuUtilisateurComponent } from './menu/menu-utilisateur/menu-utilisateur.component';
-import { FormInscriptionComponent } from './form-inscription/form-inscription.component'
+import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
+import { MenuAdministrateurComponent } from "./menu/menu-administrateur/menu-administrateur.component";
+import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisateur.component";
+import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 
 
 const routes: Routes = [
@@ -22,7 +22,6 @@ const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-
 ];
 
 
@@ -32,18 +31,17 @@ const routes: Routes = [
     TechComponent,
     AuthComponent,
     AccueilComponent,
-    MenuVisiteurComponent,
+    FormInscriptionComponent,
     MenuAdministrateurComponent,
     MenuUtilisateurComponent,
-    FormInscriptionComponent
+    MenuVisiteurComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule,
-    MDBBootstrapModule
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
