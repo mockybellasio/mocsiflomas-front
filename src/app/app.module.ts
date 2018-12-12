@@ -17,6 +17,8 @@ import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.compon
 import { GestionProduitsComponent } from './gestion-produits/gestion-produits.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { AjouterUnProduitComponent } from "./ajouter-un-produit/ajouter-un-produit.component";
+import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'ajoutProduit', component: AjouterUnProduitComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent}
+  { path: 'gestion-produits', component: GestionProduitsComponent},
+  { path: 'liste-figurines', component: ListeProduitsComponent}
 ];
 
 
@@ -43,7 +46,9 @@ const routes: Routes = [
     MenuVisiteurComponent,
     GestionProduitsComponent,
     ProduitComponent,
-    AjouterUnProduitComponent
+    AjouterUnProduitComponent,
+    ListeProduitsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
