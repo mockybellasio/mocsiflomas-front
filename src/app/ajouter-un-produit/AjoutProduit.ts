@@ -1,10 +1,10 @@
 export class AjoutProduit {
-  nomDeLaSaga: string;
-  nomDelaFigurine: string;
-  image: string;
+  nomSaga: string;
+  nomFigurine: string;
+  nomImage: string;
   personnage: string;
   taille: number;
   prix: number;
   description: string;
-  numeroDelaFigurine: number;
+  numeroFigurine: number;
 }
