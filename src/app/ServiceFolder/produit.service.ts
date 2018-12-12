@@ -13,10 +13,11 @@ export class ProduitService {
 
   constructor(private _http: HttpClient) { }
 
-  listerProduits(): Promise<Produit[]> {
-    return this._http.get(URL_BACKEND + '/produits').toPromise()
-      .then((tabprod: any[]) => tabprod
-        .map(prod => new Produit(prod.nomDeLasaga, prod.nomDelaFigurine, prod.image, prod.personnage, prod.taille, prod.prix, prod.description, prod.numerodeLafigurine)));
+  listerProduits(): Observable<any> {
+    return this._http.get(URL_BACKEND + '/produits');
+    // .then((tabprod: any[]) => tabprod
+    //     .map(prod => new Produit(prod.nomDeLasaga, prod.nomDelaFigurine, prod.image, prod.personnage, prod.taille, prod.prix, prod.description, prod.numerodeLafigurine)));
+      
   }
 
   ajouterProduit(prod: AjoutProduit): Observable<any> {
