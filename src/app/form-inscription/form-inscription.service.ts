@@ -16,7 +16,7 @@ export class FormInscriptionService {
   CreateUser(form: FormUser,file){
     //let filePath=this.onUpload(file,file.name,file.type);
     console.log("data");
-    let data=this._http.post(URL_BACKEND+'collegue/upload', file, {responseType: 'text'})
+    let data=this._http.post(URL_BACKEND+'collegue/upload/'+file.name, file, {responseType: 'text'})
       return data
     
       
