@@ -19,6 +19,5 @@ export class ListeProduitsComponent implements OnInit {
   ngOnInit() {
     
   }
-  pop1 = new Produit("star wars", "lol", "obiwan", "obiwan rose", 150, 15, "il est beau", 1)
 
 }
