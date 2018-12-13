@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
 import { ProduitService } from '../ServiceFolder/produit.service';
 
@@ -11,10 +11,11 @@ export class ProduitComponent implements OnInit {
 
   @Input() produit: Produit
 
-   
+
 
   constructor(private _produitService: ProduitService) {
-    
+
+    //this._produitService.enregistrerProduit().then(col => { this.lesProduits = col, console.log(col) })
   }
 
   ngOnInit() {

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Produit } from '../ModelFolder/Produit';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gestion-produits',

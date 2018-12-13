@@ -17,7 +17,6 @@ export class AjouterUnProduitComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.ajouterProduit);
     this._produitService.ajouterProduit(this.ajouterProduit).subscribe((c: AjoutProduit) => c = new AjoutProduit())
   }
 

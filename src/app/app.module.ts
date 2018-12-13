@@ -14,24 +14,24 @@ import { FooterComponent } from './footer/footer.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
 import { GestionProduitsComponent } from './gestion-produits/gestion-produits.component';
 import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
-import { MenuAdministrateurComponent } from "./menu/menu-administrateur/menu-administrateur.component";
-import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisateur.component";
-import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { MenuComponent } from './menu/menu.component';
+import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 
 
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent},
-  { path: 'inscription', component: FormInscriptionComponent},
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'inscription', component: FormInscriptionComponent },
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
-  { path: 'ajoutProduit', component: AjouterUnProduitComponent},
+  { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent},
-  { path: 'liste-figurines', component: ListeProduitsComponent},
-  {path: 'produits', component: ProduitComponent}
+  { path: 'gestion-produits', component: GestionProduitsComponent },
+  { path: 'liste-figurines', component: ListeProduitsComponent },
+  { path: 'produits', component: ProduitComponent },
+  {path:':nomFigurine', component: DetailsProduitsComponent} ,
 ];
 
 
@@ -42,15 +42,14 @@ const routes: Routes = [
     AuthComponent,
     AccueilComponent,
     FormInscriptionComponent,
-    MenuAdministrateurComponent,
-    MenuUtilisateurComponent,
-    MenuVisiteurComponent,
     GestionProduitsComponent,
     ProduitComponent,
     AjouterUnProduitComponent,
     ListeProduitsComponent,
     FooterComponent,
-  
+    MenuComponent,
+    DetailsProduitsComponent,
+
   ],
   imports: [
     BrowserModule,

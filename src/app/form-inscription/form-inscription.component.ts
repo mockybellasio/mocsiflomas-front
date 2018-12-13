@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormInscriptionService } from "./form-inscription.service";
-import { FormUser } from "../ModelFolder/FormUser";
 import { Router } from '@angular/router';
+import { FormUser } from "../ModelFolder/FormUser";
+import { FormInscriptionService } from "./form-inscription.service";
 
 @Component({
   selector: 'app-form-inscription',

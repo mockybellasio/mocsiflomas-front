@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./auth/auth.service";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs/internal/Observable";
-import {Collegue} from "./auth/auth.domains";
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { Observable } from "rxjs/internal/Observable";
+import { Collegue } from "./auth/auth.domains";
+import { AuthService } from "./auth/auth.service";
 
 /**
  * Composant principal de l'application.
@@ -14,19 +14,10 @@ import {Collegue} from "./auth/auth.domains";
 })
 export class AppComponent implements OnInit {
 
-  collegueConnecte:Observable<Collegue>;
+  collegueConnecte: Observable<Collegue>;
 
-  constructor(private _authSrv:AuthService, private _router:Router) {
+  constructor(private _authSrv: AuthService, private _router: Router) {
 
-  }
-
-  /**
-   * Action déconnecter collègue.
-   */
-  seDeconnecter() {
-    this._authSrv.seDeconnecter().subscribe(
-      value => this._router.navigate(['/auth'])
-    );
   }
 
   /**
@@ -35,8 +26,9 @@ export class AppComponent implements OnInit {
    * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
    */
   ngOnInit(): void {
-
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
+
+  
 
 }

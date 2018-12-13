@@ -1,6 +1,6 @@
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {Observable} from "rxjs/internal/Observable";
+import { Observable } from "rxjs/internal/Observable";
 
 /**
  * Intercepteur du client HTTP Angular permettant de paramétrer toutes les requêtes envoyées.
@@ -11,7 +11,7 @@ import {Observable} from "rxjs/internal/Observable";
  *
  */
 @Injectable()
-export class AuthInterceptorService  implements HttpInterceptor {
+export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 

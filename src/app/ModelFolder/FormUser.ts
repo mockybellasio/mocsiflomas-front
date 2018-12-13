@@ -9,6 +9,6 @@ export class FormUser {
     phone:string;
 }
 
-export class User extends FormUser{
-    imgProfil:string;
+export class User extends FormUser {
+    imgProfil: string;
 }
