@@ -7,3 +7,7 @@ export class FormUser {
     adress:string;
     phone:string;
 }
+
+export class User extends FormUser{
+    imgProfil:string;
+}
