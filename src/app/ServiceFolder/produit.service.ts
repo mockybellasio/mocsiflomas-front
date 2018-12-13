@@ -20,14 +20,11 @@ export class ProduitService {
   }
 
 //chercher par nomFigurine
-
 chercherParNom(nomFigurine:String):Observable<Produit> {
 
   return this._http.get<Produit>(URL_BACKEND + `${nomFigurine}`)
 
 }
-
-
 
   ajouterProduit(prod: AjoutProduit): Observable<any> {
     return this._http.post(`${URL_BACKEND}produit/creer`, prod);
