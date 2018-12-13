@@ -19,6 +19,7 @@ import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisate
 import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'gestion-produits', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
-  { path: 'produits', component: ProduitComponent }
+  { path: 'produits', component: ProduitComponent },
+  {path:':nomFigurine', component: DetailsProduitsComponent} ,
 ];
 
 
@@ -50,6 +52,7 @@ const routes: Routes = [
     AjouterUnProduitComponent,
     ListeProduitsComponent,
     FooterComponent,
+    DetailsProduitsComponent,
 
   ],
   imports: [
