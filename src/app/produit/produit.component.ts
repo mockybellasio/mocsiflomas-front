@@ -11,6 +11,8 @@ export class ProduitComponent implements OnInit {
 
   @Input() produit: Produit
 
+   
+
   constructor(private _produitService: ProduitService) {
     
   }
