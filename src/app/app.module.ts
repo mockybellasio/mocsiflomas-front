@@ -31,8 +31,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'gestion-produits', component: GestionProduitsComponent},
   { path: 'liste-figurines', component: ListeProduitsComponent},
-  { path : 'produit',             component : ProduitComponent}
-
+  {path: 'produits', component: ProduitComponent}
 ];
 
 

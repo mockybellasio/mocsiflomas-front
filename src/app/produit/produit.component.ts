@@ -14,16 +14,11 @@ export class ProduitComponent implements OnInit {
    
 
   constructor(private _produitService: ProduitService) {
-
-   // this._produitService.getAllProduit().subscribe(p => this.produit = p);
-
-
+    
   }
 
   ngOnInit() {
-   
-  
-   
+    console.log(this.produit.nomFigurine)
   }
 }
 

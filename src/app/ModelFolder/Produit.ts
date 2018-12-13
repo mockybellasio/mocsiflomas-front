@@ -18,4 +18,7 @@ export class Produit {
         this.description = description;
         this.numeroFigurine = numeroFigurine;
     }
+
+
+
 }

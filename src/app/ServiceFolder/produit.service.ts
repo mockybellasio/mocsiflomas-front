@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { AjoutProduit } from "../ajouter-un-produit/AjoutProduit";
+import { Produit } from "../ModelFolder/Produit";
 
 const URL_BACKEND = environment.baseUrl;
 @Injectable({
@@ -12,11 +13,16 @@ export class ProduitService {
 
   constructor(private _http: HttpClient) { }
 
-  listerProduits(): Observable<any> {
-    return this._http.get(URL_BACKEND + '/produits');
-    // .then((tabprod: any[]) => tabprod
-    //     .map(prod => new Produit(prod.nomDeLasaga, prod.nomDelaFigurine, prod.image, prod.personnage, prod.taille, prod.prix, prod.description, prod.numerodeLafigurine)));
-  }
+  // listerProduits(): Observable<any> {
+  //   return this._http.get(URL_BACKEND + 'produits', {responseType: 'text'});
+  // }
+
+//version Promise
+listerProduits():Promise<Produit[]> {
+  return this._http.get(URL_BACKEND +'produits').toPromise()
+  .then((tabProd:any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomFigurine, prod.nomImage, prod.personnage, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
+}
+
 
   ajouterProduit(prod: AjoutProduit): Observable<any> {
     return this._http.post(`${URL_BACKEND}produit/creer`, prod);
