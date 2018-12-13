@@ -17,6 +17,7 @@ import { ListeProduitsComponent } from './liste-produits/liste-produits.componen
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
 import { MenuComponent } from './menu/menu.component';
+import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 
 
 
@@ -28,7 +29,9 @@ const routes: Routes = [
   { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'gestion-produits', component: GestionProduitsComponent },
-  { path: 'liste-figurines', component: ListeProduitsComponent }
+  { path: 'liste-figurines', component: ListeProduitsComponent },
+  { path: 'produits', component: ProduitComponent },
+  {path:':nomFigurine', component: DetailsProduitsComponent} ,
 ];
 
 
@@ -45,6 +48,7 @@ const routes: Routes = [
     ListeProduitsComponent,
     FooterComponent,
     MenuComponent,
+    DetailsProduitsComponent,
 
   ],
   imports: [
