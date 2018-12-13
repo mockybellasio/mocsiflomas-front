@@ -1,23 +1,18 @@
-<h1>{{produit.nomFigurine}} {{produit.numeroFigurine}}</h1>
+<img src="https://static.fnac-static.com/multimedia/Images/FR/MDM/bc/c5/79/7980476/1540-1/tsp20181113031805/Figurine-Funko-Pop-Vinyl-Les-Animaux-Fantastiques-Norbert-Dragonneau.jpg">
 
-<div class="container">
-
-    <div class="row">
-        <div class="col">
-            <img [src]="produit.nomImage" />
-        </div>
-
-        <div class="col">
-
-            <p>{{produit.prix}}</p>
-
-            <p>{{produit.taille}}</p>
-
-            <p>{{produit.description}}</p>
-
-        </div>
-
-
-    </div>
-
+<div>
+    <a>
+        Saga : {{prod.nomSaga}} </a>
+    <br>
+    <a> Figurine : {{prod.nomFigurine}}</a>
+    <br>
+    <a> Description :  {{prod.description}}</a>
+    <br>
+    <a> numeroFigurine : {{prod.numeroFigurine}} </a>
+    <br>
+    <a> Prix :  {{prod.prix}} </a>
+    <br>
 </div>
+
+
+<!-- <a routerLink="/{{produit.numeroFigurine}}">  {{produit.numeroFigurine}} </a> -->

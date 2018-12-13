@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'gestion-produits', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
-  {path:':nomFigurine', component: DetailsProduitsComponent} ,
+  {path:'details-produits/:nomFigurine', component: DetailsProduitsComponent} ,
 ];
 
 
