@@ -9,7 +9,9 @@ import { AjoutProduit } from './AjoutProduit';
 })
 export class AjouterUnProduitComponent implements OnInit {
   ajouterProduit = new AjoutProduit();
-  constructor(private _produitService: ProduitService) { }
+
+  constructor(private _produitService: ProduitService) {
+  }
 
   ngOnInit() {
   }
