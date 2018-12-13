@@ -19,6 +19,7 @@ import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisate
 import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
     AjouterUnProduitComponent,
     ListeProduitsComponent,
     FooterComponent,
+    DetailComponent,
   
   ],
   imports: [
