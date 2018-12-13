@@ -21,23 +21,14 @@ export class AppComponent implements OnInit {
   }
 
   /**
-   * Action déconnecter collègue.
-   */
-  seDeconnecter() {
-    this._authSrv.seDeconnecter().subscribe(
-      value => this._router.navigate(['/accueil'])
-    );
-  }
-
-  /**
    * A l'initialisation, le composant s'abonne au flux du collègue courant connecté.
    *
    * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
    */
   ngOnInit(): void {
-
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
 
+  
 
 }
