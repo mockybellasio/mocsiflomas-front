@@ -1,9 +1,12 @@
+ 
  <div class="row">
 
         <div class="col-6" *ngFor="let elem of lesProduits">
 
-            <app-produit [produit]="elem"></app-produit>
-
+            <!-- <app-produit [produit]="elem"></app-produit> -->
+            <app-produit>
+                {{elem}}
+            </app-produit>
         </div>
 
     </div>

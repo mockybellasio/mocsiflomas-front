@@ -9,6 +9,7 @@ import { ProduitService } from '../ServiceFolder/produit.service';
 })
 export class ListeProduitsComponent implements OnInit {
   @Input() lesProduits:Produit[]
+
   constructor() { }
 
   ngOnInit() {

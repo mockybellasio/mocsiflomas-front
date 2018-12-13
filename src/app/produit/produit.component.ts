@@ -8,13 +8,14 @@ import { ProduitService } from '../ServiceFolder/produit.service';
   styles: []
 })
 export class ProduitComponent implements OnInit {
+
   @Input() produit: Produit
 
   constructor(private _produitService: ProduitService) {
   }
 
   ngOnInit() {
-    
+    console.log(this.produit.nomFigurine)
   }
 }
 

@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'ajoutProduit', component: AjouterUnProduitComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'gestion-produits', component: GestionProduitsComponent},
-  { path: 'liste-figurines', component: ListeProduitsComponent}
+  { path: 'liste-figurines', component: ListeProduitsComponent},
+  {path: 'produits', component: ProduitComponent}
 ];
 
 
