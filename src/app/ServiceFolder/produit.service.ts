@@ -17,11 +17,11 @@ export class ProduitService {
   //   return this._http.get(URL_BACKEND + 'produits', {responseType: 'text'});
   // }
 
-//version Promise
-listerProduits():Promise<Produit[]> {
-  return this._http.get(URL_BACKEND +'produits').toPromise()
-  .then((tabProd:any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomFigurine, prod.nomImage, prod.personnage, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
-}
+  //version Promise
+  listerProduits(): Promise<Produit[]> {
+    return this._http.get(URL_BACKEND + 'produits').toPromise()
+      .then((tabProd: any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomFigurine, prod.nomImage, prod.personnage, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
+  }
 
 
   ajouterProduit(prod: AjoutProduit): Observable<any> {
