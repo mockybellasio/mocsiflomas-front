@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Produit } from '../ModelFolder/Produit';
 
 @Component({
   selector: 'app-gestion-produits',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class GestionProduitsComponent implements OnInit {
+
 
   constructor() { }
 
