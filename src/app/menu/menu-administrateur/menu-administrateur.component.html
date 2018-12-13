@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark indigo" id="navi">
+<nav class="navbar navbar-expand-lg navbar-dark indigo light" id="navi">
     <a class="navbar-brand" routerLink="/accueil">
         <img src="http://firewhenreadypottery.com/wp-content/uploads/2014/08/Roy-Lichtenstein-3-1024x768.jpg" height="50"
             alt="mdb logo">
@@ -21,7 +21,8 @@
                     <a class="dropdown-item waves-light" mdbWavesEffect href="#">Series/Animes</a>
                     <a class="dropdown-item waves-light" mdbWavesEffect href="#">Jeux Video</a>
                     <div class="divider dropdown-divider"></div>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/liste-figurines">Toutes les figurines</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/liste-figurines">Toutes
+                        les figurines</a>
                 </div>
             </li>
             <li class="nav-item active">
@@ -32,16 +33,18 @@
         </ul>
     </div>
 
-    <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="/gestion-produits" dropdown>
-            Gestion Produits
-        </button>
+    <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="/gestion-produits"
+        dropdown>
+        Gestion Produits
+    </button>
 
     <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
         Gestion Commandes Clients
     </button>
 
-    <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
+    <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" (click)="seDeconnecter()"
+        dropdown>
         Se déconnecter
     </button>
-    
+
 </nav>

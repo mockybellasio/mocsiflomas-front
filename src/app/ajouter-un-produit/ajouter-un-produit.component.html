@@ -3,43 +3,43 @@
   <div class="container">
     <div class="row">
       <label class="col-3">Nom de la figurine : </label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomFigurine" name="nomFigurine" placeholder="Nom de la figurine"
-        #matricule="ngModel" required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomFigurine" name="nomFigurine"
+        placeholder="Nom de la figurine" #matricule="ngModel" required>
     </div>
     <div class="row">
       <label class="col-3">Nom de la saga : </label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomSaga" name="nomSaga" #matricule="ngModel" placeholder="Nom de la saga"
-        required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomSaga" name="nomSaga" #matricule="ngModel"
+        placeholder="Nom de la saga" required>
     </div>
     <div class="row">
       <label class="col-3">Personnage : </label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.personnage" name="personnage" #matricule="ngModel" placeholder="Personnage"
-        required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.personnage" name="personnage" #matricule="ngModel"
+        placeholder="Personnage" required>
     </div>
     <div class="row">
       <label class="col-3">Image : </label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomImage" name="nomImage" #matricule="ngModel" placeholder="Image"
-        required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomImage" name="nomImage" #matricule="ngModel"
+        placeholder="Image" required>
     </div>
     <div class="row">
       <label class="col-3">Description : </label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.description" name="description" placeholder="Description"
-        #matricule="ngModel" required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.description" name="description"
+        placeholder="Description" #matricule="ngModel" required>
     </div>
     <div class="row">
       <label class="col-3">Taille : (centimètres)</label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.taille" name="taille" #matricule="ngModel" placeholder="Taille"
-        type="number">
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.taille" name="taille" #matricule="ngModel"
+        placeholder="Taille" type="number">
     </div>
     <div class="row">
       <label class="col-3">Prix : (euros €)</label>
-      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.prix" name="prix" #matricule="ngModel" placeholder="Prix"
-        pattern="[0-9]*" type="number" required>
+      <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.prix" name="prix" #matricule="ngModel"
+        placeholder="Prix" pattern="[0-9]*" type="number" required>
     </div>
     <div class="row">
       <label class="col-3">Numero de la figurine : </label>
-      <input class="col-6" [(ngModel)]="ajouterProduit.numeroFigurine" name="numeroFigurine" #matricule="ngModel" type="number" placeholder="Numero de la figurine"
-        required>
+      <input class="col-6" [(ngModel)]="ajouterProduit.numeroFigurine" name="numeroFigurine" #matricule="ngModel" type="number"
+        placeholder="Numero de la figurine" required>
     </div>
     <div class="row justify-content-center">
       <button type="submit" [disabled]="!activerBouton.valid">Submit</button>

@@ -24,15 +24,15 @@ import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent},
-  { path: 'inscription', component: FormInscriptionComponent},
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'inscription', component: FormInscriptionComponent },
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
-  { path: 'ajoutProduit', component: AjouterUnProduitComponent},
+  { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent},
-  { path: 'liste-figurines', component: ListeProduitsComponent},
-  {path: 'produits', component: ProduitComponent}
+  { path: 'gestion-produits', component: GestionProduitsComponent },
+  { path: 'liste-figurines', component: ListeProduitsComponent },
+  { path: 'produits', component: ProduitComponent }
 ];
 
 
