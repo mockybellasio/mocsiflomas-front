@@ -4,6 +4,7 @@ export class FormUser {
     dateN:Date;
     email:string;
     password:string;
+    verifPassWord=function(psw2:string){return  this.password==psw2}
     adress:string;
     phone:string;
 }
