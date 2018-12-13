@@ -39,4 +39,5 @@ export class AppComponent implements OnInit {
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
 
+
 }
