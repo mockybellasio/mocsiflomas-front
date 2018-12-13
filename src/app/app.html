@@ -1,25 +1,13 @@
-<div *ngIf="collegueConnecte"></div>
-<app-menu-visiteur></app-menu-visiteur>
-<app-menu-utilisateur></app-menu-utilisateur>
-<app-menu-administrateur></app-menu-administrateur>
+<div>
+  <app-menu [obsVisiteur]="collegueConnecte"></app-menu>
+</div>
+
 
 <br>
 <div class="container">
-
-  <div *ngIf="!(collegueConnecte | async).estAnonyme()">
-    <span>{{(collegueConnecte | async).email}}</span>
-    <span>({{(collegueConnecte | async).roles}})</span>
-    <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
-  </div>
-
   <router-outlet></router-outlet>
-
-
 </div>
 <div class="container">
-
   <!-- Footer -->
   <app-footer></app-footer>
-
-
 </div>

@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark indigo" id="navi">
+    <a class="navbar-brand" href="#">
+        <img src="http://firewhenreadypottery.com/wp-content/uploads/2014/08/Roy-Lichtenstein-3-1024x768.jpg" height="50"
+            alt="mdb logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/accueil">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>
+                    Figurines Pop<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-dark indigo" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Films</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Series/Animes</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Jeux Video</a>
+                    <div class="divider dropdown-divider"></div>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/liste-figurines">Toutes les
+                        figurines</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <form class="form-inline waves-light" mdbWavesEffect>
+                    <input class="form-control mr-sm-2" type="text" placeholder="recherche">
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <!-------------------------Si c'est un visiteur------------------------->
+    <div *ngIf="visiteur.estAnonyme()">
+        <button type="button" class="btn dark indigo" routerLink="/inscription">
+            s'inscrire
+        </button>
+        <button type="button" class="btn dark indigo" routerLink="/auth">
+            se connecter
+        </button>
+        <button type="button" class="btn dark indigo">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
+        </button>
+    </div>
+
+    <!-------------------------Si c'est un administrateur------------------------->
+    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="/gestion-produits"
+            dropdown>
+            Gestion Produits
+        </button>
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
+            Gestion Commandes Clients
+        </button>
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" (click)="seDeconnecter()"
+            dropdown>
+            Se déconnecter
+        </button>
+    </div>
+    <div *ngIf="!visiteur.estAnonyme()">
+        <!-------------------------Si c'est un utilisateur------------------------->
+        <div *ngIf="!visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
+            <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
+                Mes commandes
+            </button>
+            <button type="button" class="btn dark indigo">
+                <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
+            </button>
+            <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" (click)="seDeconnecter()"
+                dropdown>
+                Se déconnecter
+            </button>
+        </div>
+    </div>
+</nav>
