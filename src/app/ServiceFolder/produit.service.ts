@@ -14,15 +14,13 @@ export class ProduitService {
   constructor(private _http: HttpClient) { }
 
   // listerProduits(): Observable<any> {
-  //   return this._http.get(URL_BACKEND + '/produits');
-  //   // .then((tabprod: any[]) => tabprod
-  //   //     .map(prod => new Produit(prod.nomDeLasaga, prod.nomDelaFigurine, prod.image, prod.personnage, prod.taille, prod.prix, prod.description, prod.numerodeLafigurine)));
+  //   return this._http.get(URL_BACKEND + 'produits', {responseType: 'text'});
   // }
 
 //version Promise
-listeProduits():Promise<Produit[]> {
-  return this._http.get(URL_BACKEND +'/produits').toPromise()
-  .then((tabProd:any[]) => tabProd.map(prod => new Produit(prod.nomDeLasaga, prod.nomDelaFigurine, prod.image, prod.personnage, prod.taille, prod.prix, prod.description, prod.numerodeLafigurine)))
+listerProduits():Promise<Produit[]> {
+  return this._http.get(URL_BACKEND +'produits').toPromise()
+  .then((tabProd:any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomFigurine, prod.nomImage, prod.personnage, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
 }
 
 
