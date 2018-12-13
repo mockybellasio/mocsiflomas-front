@@ -14,11 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
 import { GestionProduitsComponent } from './gestion-produits/gestion-produits.component';
 import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
-import { MenuAdministrateurComponent } from "./menu/menu-administrateur/menu-administrateur.component";
-import { MenuUtilisateurComponent } from "./menu/menu-utilisateur/menu-utilisateur.component";
-import { MenuVisiteurComponent } from "./menu/menu-visiteur/menu-visiteur.component";
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { MenuComponent } from './menu/menu.component';
 import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 
 
@@ -44,14 +42,12 @@ const routes: Routes = [
     AuthComponent,
     AccueilComponent,
     FormInscriptionComponent,
-    MenuAdministrateurComponent,
-    MenuUtilisateurComponent,
-    MenuVisiteurComponent,
     GestionProduitsComponent,
     ProduitComponent,
     AjouterUnProduitComponent,
     ListeProduitsComponent,
     FooterComponent,
+    MenuComponent,
     DetailsProduitsComponent,
 
   ],
