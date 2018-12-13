@@ -11,12 +11,12 @@ import { ProduitService } from '../ServiceFolder/produit.service';
 export class DetailsProduitsComponent implements OnInit {
   @Input() produit: Produit
 
-  titre:string
+  nomFigurine:string
 
   constructor(private route: ActivatedRoute, private ps:ProduitService) {
 
-    this.titre = route.snapshot.paramMap.get("nomFigurine")
-     ps.chercherParNom(this.titre)
+    this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
+     ps.chercherParNom(this.nomFigurine)
      .subscribe( op => this.produit = op)
    }
 
