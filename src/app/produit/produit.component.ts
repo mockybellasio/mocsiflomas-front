@@ -15,6 +15,7 @@ export class ProduitComponent implements OnInit {
 
   constructor(private _produitService: ProduitService) {
 
+    //this._produitService.enregistrerProduit().then(col => { this.lesProduits = col, console.log(col) })
   }
 
   ngOnInit() {
