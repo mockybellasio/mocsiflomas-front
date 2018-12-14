@@ -12,18 +12,16 @@ import { TimeoutError } from 'rxjs';
 export class DetailsProduitsComponent implements OnInit {
 
   @Input() produit: Produit
+  prod: Produit
+  nomFigurine: string
 
- prod: Produit ;
-
-  nomFigurine:string
-
-  constructor(private route: ActivatedRoute, private ps:ProduitService) {
+  constructor(private route: ActivatedRoute, private ps: ProduitService) {
 
     this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
-     ps.chercherParNom(this.nomFigurine)
-     .subscribe( op => this.prod = op)
-     
-   }
+    ps.chercherParNom(this.nomFigurine)
+      .subscribe(op => this.prod = op)
+
+  }
 
   ngOnInit() {
   }
@@ -32,7 +30,7 @@ export class DetailsProduitsComponent implements OnInit {
 
 /*
   collegue:Collegue  = new Collegue('rob ', 800, [], 'robert', 'dupont', 'robert@hotmail.fr', '7 rue de la gare ');
- 
+
 
   pseudo: string;
 

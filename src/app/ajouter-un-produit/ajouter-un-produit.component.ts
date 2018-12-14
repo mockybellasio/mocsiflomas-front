@@ -17,6 +17,7 @@ export class AjouterUnProduitComponent implements OnInit {
   }
 
   submit() {
+    //utilise produit.service dans le dossier ServiceFolder
     this._produitService.ajouterProduit(this.ajouterProduit).subscribe((c: AjoutProduit) => c = new AjoutProduit())
   }
 

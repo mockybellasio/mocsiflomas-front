@@ -1,11 +1,11 @@
-<div class="container border">
-  <img class="row" [src]="produit.nomImage">
+<div class="container">
+  <img class="row justify-content-center" [src]="produit.nomImage" routerLink="/details-produits/{{produit.nomFigurine}}">
   <div class="row">
-    <div class="col-4">
+    <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
       <a class="row">
         Saga : {{produit.nomSaga}}
       </a>
-      <a class="row" routerLink="/details-produits/{{produit.nomFigurine}}" name="figurine ">
+      <a class="row" name="figurine ">
         {{produit.nomFigurine}}
       </a>
       <a class="row">
@@ -13,13 +13,18 @@
       </a>
     </div>
 
-    <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
-      <button>Ajouter au panier</button>
-    </div>
-    <div class="col-8" *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-      <button>Modifier</button>
+    <!-------------------------Si c'est un administrateur------------------------->
+    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
+      <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
       <button>Supprimer</button>
       <button>Activer/Desactiver</button>
     </div>
+
+    <!-------------------------Si c'est un visiteur/utilisateur------------------------->
+    <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
+        <a class="row"></a>
+        <input class="row" type="number" placeholder="Quantité">
+        <button class="row">Ajouter au panier</button>
+      </div>
   </div>
 </div>

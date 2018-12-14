@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProduitService } from '../ServiceFolder/produit.service';
+import { Produit } from '../ModelFolder/Produit';
 
 @Component({
   selector: 'app-modifier-un-produit',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ModifierUnProduitComponent implements OnInit {
+  produit: Produit
 
-  constructor() { }
+  constructor(private _produitService: ProduitService) { }
 
   ngOnInit() {
+    //this._produitService.modifierProduit(this.produit,this.produit)
   }
 
 }

@@ -20,19 +20,19 @@ export class ProduitService {
   }
 
   //chercher par nomFigurine
-
   chercherParNom(nomFigurine: String): Observable<Produit> {
-
     return this._http.get<Produit>(URL_BACKEND + `${nomFigurine}`)
 
   }
 
-  modifProduit(unProduit: Produit, ajProduit: AjoutProduit): Promise<Produit> {
-    return this._http.patch(`${URL_BACKEND}/produits/${unProduit.nomFigurine}`,
-      ajProduit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+  //base posée A MODIFIER
+  modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
+    return this._http.patch(`${URL_BACKEND}gestion-produits/${unProduit.nomFigurine}`,
+      produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .toPromise().then((p: Produit) => p)
   }
 
+  //
   ajouterProduit(prod: AjoutProduit): Observable<any> {
     return this._http.post(`${URL_BACKEND}produit/creer`, prod);
     //.subscribe((c: AjoutProduit) => c = new AjoutProduit())
