@@ -19,6 +19,4 @@ export class Produit {
         this.numeroFigurine = numeroFigurine;
     }
 
-
-
 }

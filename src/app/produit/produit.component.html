@@ -1,27 +1,30 @@
+<div class="container">
+  <img class="row justify-content-center" [src]="produit.nomImage" routerLink="/details-produits/{{produit.nomFigurine}}">
+  <div class="row">
+    <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
+      <a class="row">
+        Saga : {{produit.nomSaga}}
+      </a>
+      <a class="row" name="figurine ">
+        {{produit.nomFigurine}}
+      </a>
+      <a class="row">
+        Prix : {{produit.prix}} €
+      </a>
+    </div>
 
+    <!-------------------------Si c'est un administrateur------------------------->
+    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
+      <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
+      <button>Supprimer</button>
+      <button>Activer/Desactiver</button>
+    </div>
 
-<img src="https://static.fnac-static.com/multimedia/Images/FR/MDM/bc/c5/79/7980476/1540-1/tsp20181113031805/Figurine-Funko-Pop-Vinyl-Les-Animaux-Fantastiques-Norbert-Dragonneau.jpg"> 
-
-  <a >
-   Saga :  {{produit.nomSaga}}
-  </a>
-  <br>
-  <a href="/{{produit.nomFigurine}}"> {{produit.nomFigurine}} </a>
-  <br>
-  <a> Prix :  {{produit.prix}} €</a>
-  <br>
-
-
-<img src="https://static.fnac-static.com/multimedia/Images/FR/MC/7e/80/b5/28672126/1540-1/tsp20160920095019/Figurine-Star-Wars-Dagobah-Yoda-Pop-10cm.jpg#6d61e299-bc8b-4a09-bc80-c55c1a7213bd">
-<div >
-    <a >
-     Saga :  {{produit.nomSaga}}
-    </a>
-    <br>
-    <a>  Figurine : {{produit.nomFigurine}}</a>
-    <br>
-    <a> Prix:  {{produit.prix}} €</a>
-    <br>
-  </div> 
-
-  
+    <!-------------------------Si c'est un visiteur/utilisateur------------------------->
+    <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
+        <a class="row"></a>
+        <input class="row" type="number" placeholder="Quantité">
+        <button class="row">Ajouter au panier</button>
+      </div>
+  </div>
+</div>
