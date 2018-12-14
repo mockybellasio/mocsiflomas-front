@@ -12,8 +12,6 @@ export class ListeProduitsComponent implements OnInit {
 
   constructor(private _produitService: ProduitService) {
     this._produitService.listerProduits().then(col => { this.lesProduits = col, console.log(col) })
-    // .subscribe(col=>{this.lesProduits=col,
-    //   console.log(col)});
   }
 
   ngOnInit() {

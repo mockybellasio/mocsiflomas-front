@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
@@ -19,15 +19,19 @@ export class ProduitService {
       .then((tabProd: any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomImage, prod.personnage, prod.nomFigurine, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
   }
 
-//chercher par nomFigurine
+  //chercher par nomFigurine
 
-chercherParNom(nomFigurine:String):Observable<Produit> {
+  chercherParNom(nomFigurine: String): Observable<Produit> {
 
-  return this._http.get<Produit>(URL_BACKEND + `${nomFigurine}`)
+    return this._http.get<Produit>(URL_BACKEND + `${nomFigurine}`)
 
-}
+  }
 
-
+  modifProduit(unProduit: Produit, ajProduit: AjoutProduit): Promise<Produit> {
+    return this._http.patch(`${URL_BACKEND}/produits/${unProduit.nomFigurine}`,
+      ajProduit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+      .toPromise().then((p: Produit) => p)
+  }
 
   ajouterProduit(prod: AjoutProduit): Observable<any> {
     return this._http.post(`${URL_BACKEND}produit/creer`, prod);

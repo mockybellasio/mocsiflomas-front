@@ -18,6 +18,7 @@ import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
 import { MenuComponent } from './menu/menu.component';
 import { DetailsProduitsComponent } from './details-produits/details-produits.component';
+import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 
 
 
@@ -49,6 +50,7 @@ const routes: Routes = [
     FooterComponent,
     MenuComponent,
     DetailsProduitsComponent,
+    ModifierUnProduitComponent,
 
   ],
   imports: [
