@@ -11,6 +11,8 @@ import { ProduitService } from '../ServiceFolder/produit.service';
   styles: []
 })
 export class ListeProduitsComponent implements OnInit {
+  filter:string
+
   lesProduits: Produit[]
   collegueConnecte: Observable<Collegue>;
 

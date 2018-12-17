@@ -20,7 +20,6 @@ export class ProduitComponent implements OnInit {
   ngOnInit() {
     this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
-  
 }
 
 
