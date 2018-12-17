@@ -15,7 +15,6 @@ export class FormInscriptionComponent implements OnInit {
   file;
   monModel: FormUser = new FormUser();
   messageError: string;
-  img;
   verif: string;
 
   submit() {

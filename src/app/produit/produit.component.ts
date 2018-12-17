@@ -15,8 +15,7 @@ export class ProduitComponent implements OnInit {
   visiteur: Collegue
   @Input() produit: Produit
 
-  constructor(private _authSrv: AuthService, private _router: Router) {
-    
+  constructor() {
     this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
   }
 

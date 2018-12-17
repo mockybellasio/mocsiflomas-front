@@ -15,7 +15,7 @@ export class ListeProduitsComponent implements OnInit {
   lesProduits: Produit[]
   collegueConnecte: Observable<Collegue>;
 
-  constructor(private _produitService: ProduitService, private _authSrv: AuthService, private _router: Router) {
+  constructor(private _produitService: ProduitService, private _authSrv: AuthService) {
     //utilise produit.service dans le dossier ServiceFolder
     this._produitService.listerProduits().then(col => { this.lesProduits = col, console.log(col) })
   }
