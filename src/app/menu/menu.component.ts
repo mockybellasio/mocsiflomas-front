@@ -34,3 +34,5 @@ export class MenuComponent implements OnInit {
 //   rechercheFigurines() {
 //     this._recherche.rechercheAll(this.searchText)._subscribe(r => r)
 //   }
+// }
+

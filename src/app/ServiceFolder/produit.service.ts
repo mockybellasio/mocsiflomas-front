@@ -27,18 +27,16 @@ export class ProduitService {
 
   //base posée A MODIFIER
   modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
-    return this._http.patch(`${URL_BACKEND}gestion-produits/${unProduit.nomFigurine}`,
+    return this._http.patch(`${URL_BACKEND}gestion-produits/modifier-produit/${unProduit.nomFigurine}`,
       produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .toPromise().then((p: Produit) => p)
   }
 
   //
   ajouterProduit(prod: AjoutProduit): Observable<any> {
-    return this._http.post(`${URL_BACKEND}produit/creer`, prod);
-    //.subscribe((c: AjoutProduit) => c = new AjoutProduit())
-    // .then((c: AjoutProduit) => c = new AjoutProduit())
+    return this._http.post(`${URL_BACKEND}gestion-produits/creer-produit`, prod);
   }
-
-
-
+  SupprimerProduit(produit: Produit): Observable<any> {
+    return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
+  }
 }

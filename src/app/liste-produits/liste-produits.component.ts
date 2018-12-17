@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Produit } from '../ModelFolder/Produit';
-import { ProduitService } from '../ServiceFolder/produit.service';
 import { Observable } from 'rxjs';
 import { Collegue } from '../auth/auth.domains';
 import { AuthService } from '../auth/auth.service';
-import { Router } from '@angular/router';
+import { Produit } from '../ModelFolder/Produit';
+import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-liste-produits',
