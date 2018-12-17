@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
 import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../ServiceFolder/produit.service';
-import { TimeoutError } from 'rxjs';
 
 @Component({
   selector: 'app-details-produits',
