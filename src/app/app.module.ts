@@ -34,7 +34,9 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
+  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
+  { path : 'gestion-produits/supprimer-produit', component :ProduitComponent },
+  { path : 'gestion-produits/activer-desactiver-produit', component : ProduitComponent}
 ];
 
 

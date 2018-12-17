@@ -31,8 +31,9 @@ export class ProduitService {
       .toPromise().then((p: Produit) => p)
   }
 
-  SupprimerProduit(produit: Produit): Observable<any> {
-    return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
+  SupprimerProduit(nomFigurine : string ): Observable<any> {
+    return this._http.delete(`${URL_BACKEND}supprimer/${nomFigurine}`)
+
   }
 
 }
