@@ -10,14 +10,15 @@ import { AppComponent } from './app.component';
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthComponent } from './auth/auth.component';
 import { StatutConnecteService } from "./auth/statut-connecte.service";
+import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
 import { GestionProduitsComponent } from './gestion-produits/gestion-produits.component';
 import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
+import { MenuComponent } from './menu/menu.component';
+import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { MenuComponent } from './menu/menu.component';
-import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'gestion-produits', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
-  {path:'details-produits/:nomFigurine', component: DetailsProduitsComponent} ,
+  { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
+  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
 ];
 
 
@@ -49,6 +51,7 @@ const routes: Routes = [
     FooterComponent,
     MenuComponent,
     DetailsProduitsComponent,
+    ModifierUnProduitComponent,
 
   ],
   imports: [

@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
   }
 
   seDeconnecter() {
+    //la deconnection redirige sur la page accueil
     this._authSrv.seDeconnecter().subscribe(
       value => this._router.navigate(['/accueil'])
     );

@@ -10,7 +10,6 @@ import { FormInscriptionService } from "./form-inscription.service";
 })
 export class FormInscriptionComponent implements OnInit {
 
-
   constructor(protected pService: FormInscriptionService, private router: Router) { }
 
   file;
@@ -19,18 +18,16 @@ export class FormInscriptionComponent implements OnInit {
   img;
   verif: string;
 
-
   submit() {
     if (this.monModel.verifPassWord(this.verif)) {
       console.log(this.monModel)
 
-      this.pService.CreateUser(this.file).subscribe(col=>this.pService.saveClient(this.monModel,col));
+      this.pService.CreateUser(this.file).subscribe(col => this.pService.saveClient(this.monModel, col));
     }
     // .then(() => this.router.navigate(['/']))
     // .catch((error) => {
     //   this.messageError=error.error;
     // });
-
   }
 
   ngOnInit() {

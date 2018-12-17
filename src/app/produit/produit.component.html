@@ -1,28 +1,30 @@
-<!-- https://static.fnac-static.com/multimedia/Images/FR/NR/42/df/75/7724866/1540-1/tsp20160104164612/Figurine-Funko-Pop-Harry-Potter-10-cm.jpg -->
- <img  [src]="produit.nomImage" >
-<div> 
-<br>
-<a>
-  Saga : {{produit.nomSaga}}
-</a>
-<br>
-<a routerLink="/details-produits/{{produit.nomFigurine}}" name = "figurine ">  {{produit.nomFigurine}} </a>
-<br>
-<a> Prix : {{produit.prix}} €</a>
-<br>
+<div class="container">
+  <img class="row justify-content-center" [src]="produit.nomImage" routerLink="/details-produits/{{produit.nomFigurine}}">
+  <div class="row">
+    <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
+      <a class="row">
+        Saga : {{produit.nomSaga}}
+      </a>
+      <a class="row" name="figurine ">
+        {{produit.nomFigurine}}
+      </a>
+      <a class="row">
+        Prix : {{produit.prix}} €
+      </a>
+    </div>
+
+    <!-------------------------Si c'est un administrateur------------------------->
+    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
+      <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
+      <button>Supprimer</button>
+      <button>Activer/Desactiver</button>
+    </div>
+
+    <!-------------------------Si c'est un visiteur/utilisateur------------------------->
+    <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
+        <a class="row"></a>
+        <input class="row" type="number" placeholder="Quantité">
+        <button class="row">Ajouter au panier</button>
+      </div>
+  </div>
 </div>
-
-
-
-<img [src]="produit.nomImage">
-<div>
-  <a>
-    Saga : {{produit.nomSaga}}
-  </a>
-  <br>
-  <a routerLink="/details-produits/{{produit.nomFigurine}}">  {{produit.nomFigurine}} </a>
-  <br>
-  <a> Prix: {{produit.prix}} €</a>
-  <br>
-</div>
-

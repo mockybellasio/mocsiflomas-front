@@ -7,12 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(/*private _collegueService: ProduitService*/) {
+  constructor() {
   }
 
   ngOnInit() {
-    /*this._produitsService.listerProduits()
-      .then(prod => this.listerProduits = prod)*/
   }
 
 }
