@@ -1,5 +1,10 @@
 <!-------------------------formulaire d'inscription------------------------->
-{{verifPassWord}}
+{{
+    monModel.prenom
+}}
+<div class="alert alert-danger" role="alert" *ngIf="messageError">
+    {{messageError}}
+</div>
 <form (ngSubmit)="submit()" #monForm="ngForm" class="text-center border border-light p-5">
 
     <p class="h4 mb-4">Inscription</p>
@@ -8,12 +13,12 @@
         <div class="col">
             <!-- First name -->
             <input type="text" id="defaultRegisterFormFirstName" name="prenom" [(ngModel)]="monModel.prenom" class="form-control"
-                placeholder="prenom">
+                placeholder="prenom" required>
         </div>
         <div class="col">
             <!-- Last name -->
             <input type="text" id="defaultRegisterFormLastName" name="nom" [(ngModel)]="monModel.nom" class="form-control"
-                placeholder="Nom">
+                placeholder="Nom" required>
         </div>
         <div class="col">
             <!-- date naissance -->
@@ -24,31 +29,32 @@
 
     <!-- E-mail -->
     <input type="email" id="defaultRegisterFormEmail" name="email" [(ngModel)]="monModel.email" class="form-control mb-4"
-        placeholder="E-mail">
+        placeholder="E-mail" required>
 
     <!-- Password -->
     <input type="password" id="defaultRegisterFormPassword" name="password" [(ngModel)]="monModel.password" class="form-control"
-        placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         Au moins 8 caractères et 1 chiffre
     </small>
 
     <input type="password" id="defaultRegisterFormPasswordconfirm" [(ngModel)]="verif" name="passwordVerif" class="form-control mb-4"
-        placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
 
     <!-- Adresse -->
     <input type="text" id="defaultRegisterAdress" name="adress" [(ngModel)]="monModel.adress" class="form-control"
-        placeholder="Adresse" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        placeholder="Adresse" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         Adresse de livréson
     </small>
 
     <!-- Phone number -->
     <input type="text" id="defaultRegisterPhonePassword" name="phone" [(ngModel)]="monModel.phone" class="form-control mb-4"
-        placeholder="Telephone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        placeholder="Telephone" aria-describedby="defaultRegisterFormPhoneHelpBlock" accept="image/gif, image/jpeg, image/png">
 
 
-    <input class="form-control" type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
+    <h4><label for="file" class="label-file">Choisir une image</label></h4>
+    <input class="input-file" id=file type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
 
     <!-- Sign up button -->
     <button mdbBtn color="info" block="true" class="my-4" [disabled]="!monForm.valid" type="submit">Sign in</button>
