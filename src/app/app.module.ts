@@ -34,8 +34,7 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
-  { path : 'supProduit', component : SupprimerProduitComponent}
+  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
 ];
 
 
@@ -54,7 +53,6 @@ const routes: Routes = [
     MenuComponent,
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
-    SupprimerProduitComponent,
 
   ],
   imports: [
