@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
       value => this._router.navigate(['/accueil'])
     );
   }
+}
 //   rechercheFigurines() {
 //     this._recherche.rechercheAll(this.searchText)._subscribe(r => r)
 //   }
-// }

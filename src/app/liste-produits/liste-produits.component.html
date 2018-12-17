@@ -1,7 +1,10 @@
-
+<form class="uk-form">
+    <input ng-model="searchText" placeholder="chercher une figurine">
+  </form>
 <!-------------------------liste les produits------------------------->
 <div class="row">
-  <div class="col-6" *ngFor="let elem of lesProduits">
+  <div class="col-6" *ngFor="let elem of lesProduits | filter:searchText" > >
+
     <app-produit [obsVisiteur]="collegueConnecte" [produit]="elem"></app-produit>
   </div>
 </div>
