@@ -5,7 +5,7 @@ import { AjoutProduit } from './AjoutProduit';
 @Component({
   selector: 'app-ajouter-un-produit',
   templateUrl: `./ajouter-un-produit.component.html`,
-  styles: []
+  styleUrls: [`./ajouter-un-produit.component.scss`]
 })
 export class AjouterUnProduitComponent implements OnInit {
   ajouterProduit = new AjoutProduit();

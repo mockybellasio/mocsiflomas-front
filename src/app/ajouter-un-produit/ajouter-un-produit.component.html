@@ -21,8 +21,11 @@
     </div>
     <!-------------------------nomImage | obligatoire------------------------->
     <div class="row">
-      <label class="col-3">Image : </label>
-      <input class="form-control" type="file" placeholder="Upload your file" (change)="onFileChanged($event)" required>
+      <!-- <label class="col-3">Image : </label>
+      <input class="form-control" type="file" placeholder="Upload your file" (change)="onFileChanged($event)" required> -->
+      <h4><label for="file" class="label-file">Choisir une image</label></h4>
+      <input class="input-file" id=file type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
+
     </div>
     <!-------------------------description | pas obligatoire------------------------->
     <div class="row">
