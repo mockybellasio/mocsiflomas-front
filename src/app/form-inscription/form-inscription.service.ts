@@ -33,7 +33,6 @@ export class FormInscriptionService {
       email: form.email,
       imgProfil: img
     }
-    , { responseType: 'text' }
-  ).toPromise().then((message)=>console.log(message))
+  ).toPromise()
   }
 }

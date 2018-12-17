@@ -19,7 +19,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { SupprimerProduitComponent } from './supprimer-produit/supprimer-produit.component';
+import { PersonnagePipe } from './pipes/personnage.pipe';
 
 
 

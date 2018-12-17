@@ -14,13 +14,13 @@ export class AjouterUnProduitService {
 
   CreerProduit(file): Observable<any> {
     console.log("creat");
-    return this._http.post(URL_BACKEND + 'ajoutProduit/upload/' + file.name, file, { responseType: 'text' });
+    return this._http.post(URL_BACKEND + 'gestion-produit/upload/' + file.name, file, { responseType: 'text' });
   }
 
   ajouterProduit(form: AjoutProduit, img): Promise<any> {
     console.log("save")
     form.nomImage = img;
-    return this._http.post(URL_BACKEND.concat("ajoutProduit/nouveau"),form)
+    return this._http.post(URL_BACKEND.concat("gestion-produit/creer"),form)
     .toPromise().then()
   }
 }

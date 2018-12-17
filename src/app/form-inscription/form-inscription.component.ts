@@ -6,7 +6,7 @@ import { FormInscriptionService } from "./form-inscription.service";
 @Component({
   selector: 'app-form-inscription',
   templateUrl: './form-inscription.component.html',
-  styles: []
+  styleUrls: ['./form-inscription.component.scss']
 })
 export class FormInscriptionComponent implements OnInit {
 
@@ -20,13 +20,21 @@ export class FormInscriptionComponent implements OnInit {
   submit() {
     if (this.monModel.verifPassWord(this.verif)) {
       console.log(this.monModel)
-
-      this.pService.CreateUser(this.file).subscribe(col => this.pService.saveClient(this.monModel, col));
+      if (this.file) {
+        this.pService.CreateUser(this.file).subscribe(col => {
+          this.pService.saveClient(this.monModel, col)
+            .then(val => this.router.navigate(['/auth']).catch(error => console.log("toto")))
+        });
+      } else {
+        this.pService.saveClient(this.monModel, undefined)
+          .then(val => this.router.navigate(['/auth']))
+          .catch(error=>{this.messageError=error.error.message; console.log(error);})
+        
+      }
+    } else {
+      this.messageError = "mot de passe differant"
     }
-    // .then(() => this.router.navigate(['/']))
-    // .catch((error) => {
-    //   this.messageError=error.error;
-    // });
+
   }
 
   ngOnInit() {
