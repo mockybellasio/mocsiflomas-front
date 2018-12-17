@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class ListeProduitsComponent implements OnInit {
+  filter:string
+
   lesProduits: Produit[]
   collegueConnecte: Observable<Collegue>;
 
