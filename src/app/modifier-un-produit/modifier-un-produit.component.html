@@ -6,35 +6,35 @@
       <label class="col-3">Nom de la figurine : </label>
       <a href="" class="col-3">{{ajouterProduit.nomFigurine}}</a>
       <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomFigurine" name="nomFigurine"
-        placeholder="Nom de la figurine" #matricule="ngModel" required>
+        placeholder="Nom de la figurine" #matricule="ngModel">
     </div>
     <!-------------------------nomSaga | pas obligatoire------------------------->
     <div class="row">
       <label class="col-3">Nom de la saga : </label>
       <a href="" class="col-3">{{ajouterProduit.nomSaga}}</a>
       <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomSaga" name="nomSaga" #matricule="ngModel"
-        placeholder="Nom de la saga" required>
+        placeholder="Nom de la saga">
     </div>
     <!-------------------------personnage | pas obligatoire------------------------->
     <div class="row">
       <label class="col-3">Personnage : </label>
       <a href="" class="col-3">{{ajouterProduit.personnage}}</a>
       <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.personnage" name="personnage" #matricule="ngModel"
-        placeholder="Personnage" required>
+        placeholder="Personnage">
     </div>
     <!-------------------------nomImage | pas obligatoire------------------------->
     <div class="row">
       <label class="col-3">Image : </label>
       <a href="" class="col-3">{{ajouterProduit.nomImage}}</a>
       <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.nomImage" name="nomImage" #matricule="ngModel"
-        placeholder="Image" required>
+        placeholder="Image">
     </div>
     <!-------------------------description | pas obligatoire------------------------->
     <div class="row">
       <label class="col-3">Description : </label>
       <a href="" class="col-3">{{ajouterProduit.description}}</a>
       <input class="col-6 justify-content-center" [(ngModel)]="ajouterProduit.description" name="description"
-        placeholder="Description" #matricule="ngModel" required>
+        placeholder="Description" #matricule="ngModel">
     </div>
     <!-------------------------taille | pas obligatoire------------------------->
     <div class="row">
@@ -48,7 +48,7 @@
       <label class="col-3">Numero de la figurine : </label>
       <a href="" class="col-3">{{ajouterProduit.numeroFigurine}}</a>
       <input class="col-6" [(ngModel)]="ajouterProduit.numeroFigurine" name="numeroFigurine" #matricule="ngModel" type="number"
-        placeholder="Numero de la figurine" required>
+        placeholder="Numero de la figurine">
     </div>
     <div class="row justify-content-center">
       <button type="submit" [disabled]="!activerBouton.valid">Submit</button>

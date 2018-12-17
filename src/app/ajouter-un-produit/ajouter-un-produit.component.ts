@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProduitService } from '../ServiceFolder/produit.service';
+import { AjouterUnProduitService } from './ajouter-un-produit.service';
 import { AjoutProduit } from './AjoutProduit';
 
 @Component({
@@ -9,16 +9,23 @@ import { AjoutProduit } from './AjoutProduit';
 })
 export class AjouterUnProduitComponent implements OnInit {
   ajouterProduit = new AjoutProduit();
+  file;
 
-  constructor(private _produitService: ProduitService) {
+  constructor(private _ajoutProduitService: AjouterUnProduitService) {
   }
 
   ngOnInit() {
   }
 
   submit() {
-    //utilise produit.service dans le dossier ServiceFolder
-    this._produitService.ajouterProduit(this.ajouterProduit).subscribe((c: AjoutProduit) => c = new AjoutProduit())
+    //utilise ajouter-un-produit.service dans le dossier ajouter-un-produit
+    this._ajoutProduitService.CreerProduit(this.file).subscribe(prod => this._ajoutProduitService.ajouterProduit(this.ajouterProduit, prod))
+
+  }
+
+  onFileChanged(event) {
+    this.file = event.target.files[0];
+    console.log(this.file);
   }
 
 }

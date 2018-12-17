@@ -5,8 +5,8 @@
       <a class="row">
         Saga : {{produit.nomSaga}}
       </a>
-      <a class="row" name="figurine ">
-        {{produit.nomFigurine}}
+      <a class="row">
+        figurine : {{produit.nomFigurine}}
       </a>
       <a class="row">
         Prix : {{produit.prix}} €
@@ -22,9 +22,9 @@
 
     <!-------------------------Si c'est un visiteur/utilisateur------------------------->
     <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
-        <a class="row"></a>
-        <input class="row" type="number" placeholder="Quantité">
-        <button class="row">Ajouter au panier</button>
-      </div>
+      <a class="row"></a>
+      <input class="row" type="number" placeholder="Quantité">
+      <button class="row">Ajouter au panier</button>
+    </div>
   </div>
 </div>
