@@ -3,7 +3,7 @@
   </form>
 <!-------------------------liste les produits------------------------->
 <div class="row">
-  <div class="col-6" *ngFor="let elem of lesProduits | filter:searchText" > >
+  <div class="col-6" *ngFor="let elem of lesProduits " > 
 
     <app-produit [obsVisiteur]="collegueConnecte" [produit]="elem"></app-produit>
   </div>

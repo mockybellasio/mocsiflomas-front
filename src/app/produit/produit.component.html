@@ -23,8 +23,8 @@
     <!-------------------------Si c'est un visiteur/utilisateur------------------------->
     <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
       <a class="row"></a>
-      <input class="row" type="number" placeholder="Quantité">
-      <button class="row">Ajouter au panier</button>
+      <input class="row" type="number" [(ngModel)]="qte" placeholder="Quantité">
+      <button class="row" (click)="ajouterProduit()">Ajouter au panier</button>
     </div>
   </div>
 </div>
