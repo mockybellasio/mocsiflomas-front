@@ -34,3 +34,4 @@ export class MenuComponent implements OnInit {
 //     this._recherche.rechercheAll(this.searchText)._subscribe(r => r)
 //   }
 // }
+}
