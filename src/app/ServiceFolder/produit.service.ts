@@ -38,4 +38,7 @@ export class ProduitService {
     //.subscribe((c: AjoutProduit) => c = new AjoutProduit())
     // .then((c: AjoutProduit) => c = new AjoutProduit())
   }
+
+
+
 }
