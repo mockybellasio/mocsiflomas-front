@@ -32,10 +32,6 @@ export class ProduitService {
       .toPromise().then((p: Produit) => p)
   }
 
-  //
-  ajouterProduit(prod: AjoutProduit): Observable<any> {
-    return this._http.post(`${URL_BACKEND}gestion-produits/creer-produit`, prod);
-  }
   SupprimerProduit(produit: Produit): Observable<any> {
     return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
   }
