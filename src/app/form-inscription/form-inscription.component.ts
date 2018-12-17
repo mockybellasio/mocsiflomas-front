@@ -10,7 +10,6 @@ import { FormInscriptionService } from "./form-inscription.service";
 })
 export class FormInscriptionComponent implements OnInit {
 
-
   constructor(protected pService: FormInscriptionService, private router: Router) { }
 
   file;
@@ -18,7 +17,6 @@ export class FormInscriptionComponent implements OnInit {
   messageError: string;
   img;
   verif: string;
-
 
   submit() {
     if (this.monModel.verifPassWord(this.verif)) {
@@ -30,7 +28,6 @@ export class FormInscriptionComponent implements OnInit {
     // .catch((error) => {
     //   this.messageError=error.error;
     // });
-
   }
 
   ngOnInit() {

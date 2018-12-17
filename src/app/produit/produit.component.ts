@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Collegue } from '../auth/auth.domains';
+import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
-import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-produit',
@@ -8,18 +11,17 @@ import { ProduitService } from '../ServiceFolder/produit.service';
   styles: []
 })
 export class ProduitComponent implements OnInit {
-
+  @Input() obsVisiteur: Observable<Collegue>
+  visiteur: Collegue
   @Input() produit: Produit
 
-
-
-  constructor(private _produitService: ProduitService) {
-
-    //this._produitService.enregistrerProduit().then(col => { this.lesProduits = col, console.log(col) })
+  constructor(private _authSrv: AuthService, private _router: Router) {
+    
+    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
   }
 
   ngOnInit() {
-    console.log(this.produit.nomFigurine)
+    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
 }
 
