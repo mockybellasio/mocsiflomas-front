@@ -39,11 +39,13 @@ export class ProduitService {
     // .then((c: AjoutProduit) => c = new AjoutProduit())
 
   }
+
   SupprimerProduit(produit: Produit): Observable<any> {
 
-    return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
+  return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
 
 
 
   }
+
 }
