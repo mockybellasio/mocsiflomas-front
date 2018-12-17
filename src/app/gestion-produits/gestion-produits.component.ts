@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Collegue } from '../auth/auth.domains';
 
 @Component({
   selector: 'app-gestion-produits',
@@ -6,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class GestionProduitsComponent implements OnInit {
+  @Input() obsVisiteur: Observable<Collegue>
+  visiteur: Collegue
 
-
-  constructor() { }
+  constructor() {
+    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
+  }
 
   ngOnInit() {
+    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
 
 }
