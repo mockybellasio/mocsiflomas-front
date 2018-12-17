@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Collegue } from '../auth/auth.domains';
-import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
 
 @Component({
@@ -22,7 +20,5 @@ export class ProduitComponent implements OnInit {
   ngOnInit() {
     this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
+  
 }
-
-
-

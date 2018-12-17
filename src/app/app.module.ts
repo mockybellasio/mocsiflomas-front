@@ -54,8 +54,8 @@ const routes: Routes = [
     MenuComponent,
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
-    PersonnagePip,
-    PanierComponente,
+    PersonnagePipe,
+    PanierComponent,
 
   ],
   imports: [
