@@ -20,8 +20,7 @@ export class ProduitService {
 
   //chercher par nomFigurine
   chercherParNom(nomFigurine: String): Observable<Produit> {
-    return this._http.get<Produit>(URL_BACKEND + `${nomFigurine}`)
-
+    return this._http.get<Produit>(URL_BACKEND + `produit/${nomFigurine}`)
   }
 
   //base posée A MODIFIER
@@ -34,4 +33,5 @@ export class ProduitService {
   SupprimerProduit(produit: Produit): Observable<any> {
     return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
   }
+
 }
