@@ -1,8 +1,8 @@
 export class AjoutProduit {
   nomSaga: string;
-  nomFigurine: string;
   nomImage: string;
   personnage: string;
+  nomFigurine: string;
   taille: number;
   prix: number;
   description: string;

@@ -18,7 +18,7 @@ export class DetailsProduitsComponent implements OnInit {
 
     this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
     ps.chercherParNom(this.nomFigurine)
-      .subscribe(op => this.prod = op)
+      .subscribe(op => this.produit = op)
 
   }
 
