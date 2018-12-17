@@ -37,5 +37,13 @@ export class ProduitService {
     return this._http.post(`${URL_BACKEND}produit/creer`, prod);
     //.subscribe((c: AjoutProduit) => c = new AjoutProduit())
     // .then((c: AjoutProduit) => c = new AjoutProduit())
+
+  }
+  SupprimerProduit(produit: Produit): Observable<any> {
+
+    return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
+
+
+
   }
 }

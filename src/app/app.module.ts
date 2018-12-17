@@ -19,6 +19,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { SupprimerProduitComponent } from './supprimer-produit/supprimer-produit.component';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
+  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
+  { path : 'supProduit', component : SupprimerProduitComponent}
 ];
 
 
@@ -52,6 +54,7 @@ const routes: Routes = [
     MenuComponent,
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
+    SupprimerProduitComponent,
 
   ],
   imports: [
