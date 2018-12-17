@@ -24,7 +24,7 @@ export class FormInscriptionComponent implements OnInit {
     if (this.monModel.verifPassWord(this.verif)) {
       console.log(this.monModel)
 
-      this.pService.CreateUser(this.file).subscribe(col=>this.pService.saveClient(this.monModel,col));
+      this.pService.CreateUser(this.file).subscribe(col=>{this.pService.saveClient(this.monModel,col),this.router.navigate(['/'])});
     }
     // .then(() => this.router.navigate(['/']))
     // .catch((error) => {
