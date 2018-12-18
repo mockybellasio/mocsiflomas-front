@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Collegue } from '../auth/auth.domains';
 import { Produit } from '../ModelFolder/Produit';
+import { PanierService } from '../panier/panier.service';
 
 @Component({
   selector: 'app-produit',
@@ -12,9 +13,14 @@ export class ProduitComponent implements OnInit {
   @Input() obsVisiteur: Observable<Collegue>
   visiteur: Collegue
   @Input() produit: Produit
+  qte:number;
 
-  constructor() {
+  constructor(private _panierService: PanierService) {
     this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
+  }
+
+  ajouterProduit(){
+    this._panierService.addPanier(this.qte,this.produit)
   }
 
   ngOnInit() {
