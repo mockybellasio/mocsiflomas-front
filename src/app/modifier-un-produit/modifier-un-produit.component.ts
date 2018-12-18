@@ -16,4 +16,7 @@ export class ModifierUnProduitComponent implements OnInit {
     //this._produitService.modifierProduit(this.produit,this.produit)
   }
 
+  submit(){
+    
+  }
 }

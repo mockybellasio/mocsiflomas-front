@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
 import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../ServiceFolder/produit.service';
+import { Collegue } from '../auth/auth.domains';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-details-produits',
@@ -9,13 +11,14 @@ import { ProduitService } from '../ServiceFolder/produit.service';
   styles: []
 })
 export class DetailsProduitsComponent implements OnInit {
-
+  @Input() obsVisiteur: Observable<Collegue>
+  visiteur: Collegue
   @Input() produit: Produit
   prod: Produit
   nomFigurine: string
 
   constructor(private route: ActivatedRoute, private ps: ProduitService) {
-
+    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
     this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
     ps.chercherParNom(this.nomFigurine)
       .subscribe(op => this.produit = op)
@@ -23,6 +26,7 @@ export class DetailsProduitsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
 
 }

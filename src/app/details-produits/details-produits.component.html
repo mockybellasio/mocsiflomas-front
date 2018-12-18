@@ -14,8 +14,8 @@
                 <input class="row" type="number" placeholder="Quantité">
                 <button class="row">Ajouter au panier</button>
             </div>
+            
             <!-------------------------Si c'est un administrateur------------------------->
-
             <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
                 <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
                 <button>Supprimer</button>

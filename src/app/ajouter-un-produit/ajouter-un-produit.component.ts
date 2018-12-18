@@ -19,7 +19,7 @@ export class AjouterUnProduitComponent implements OnInit {
 
   submit() {
     //utilise ajouter-un-produit.service dans le dossier ajouter-un-produit
-    this._ajoutProduitService.CreerProduit(this.file).subscribe(prod => this._ajoutProduitService.ajouterProduit(this.ajouterProduit, prod))
+    this._ajoutProduitService.creerProduit(this.file).subscribe(prod => this._ajoutProduitService.ajouterProduit(this.ajouterProduit, prod))
 
   }
 
