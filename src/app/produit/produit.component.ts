@@ -20,7 +20,6 @@ export class ProduitComponent implements OnInit {
   }
 
   ajouterProduit(){
-    console.log(this.produit);
     this._panierService.addPanier(this.qte,this.produit)
   }
 
