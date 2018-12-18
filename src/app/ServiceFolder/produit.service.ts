@@ -14,13 +14,13 @@ export class ProduitService {
 
   //version Promise
   listerProduits(): Promise<Produit[]> {
-    return this._http.get(URL_BACKEND + 'produits/liste-produits').toPromise()
+    return this._http.get(URL_BACKEND + 'gestion-produit/liste-produits').toPromise()
       .then((tabProd: any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomImage, prod.personnage, prod.nomFigurine, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
   }
 
   //chercher par nomFigurine
   chercherParNom(nomFigurine: String): Observable<Produit> {
-    return this._http.get<Produit>(URL_BACKEND + `produit/${nomFigurine}`)
+    return this._http.get<Produit>(URL_BACKEND + `gestion-produit/${nomFigurine}`)
   }
 
   //base posée A MODIFIER
