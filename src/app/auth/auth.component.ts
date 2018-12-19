@@ -13,7 +13,6 @@ import { AuthService } from "./auth.service";
 })
 export class AuthComponent implements OnInit {
 
-
   collegue: Collegue = new Collegue({});
   err: boolean;
 
