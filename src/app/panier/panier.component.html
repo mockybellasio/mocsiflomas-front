@@ -1,0 +1,20 @@
+<div>
+    <div class="container">
+        Total= {{total}}
+        <div class="row" *ngFor="let elem of valuePanier">
+            <div class="col-sm">
+                <img [src]="elem[0].nomImage" alt="image produit">
+            </div>
+            <div class="col-sm">
+                {{elem[0].nomFigurine}}
+            </div>
+            <div class="col-sm">
+                {{elem[0].prix}}€
+            </div>
+            <div class="col-sm">
+                {{elem[1]}}
+            </div>
+        </div>
+
+    </div>
+</div>

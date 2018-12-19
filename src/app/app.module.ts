@@ -27,6 +27,7 @@ import { RecherchePipe } from './pipes/recherche.pipe';
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'inscription', component: FormInscriptionComponent },
+  { path: 'panier', component: PanierComponent },
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: 'ajoutProduit', component: AjouterUnProduitComponent },
