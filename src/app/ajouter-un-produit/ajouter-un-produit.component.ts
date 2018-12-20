@@ -31,7 +31,7 @@ export class AjouterUnProduitComponent implements OnInit {
     if(this.file){
       this._ajoutProduitService.creerProduit(this.file).subscribe(prod => this._ajoutProduitService.ajouterProduit(this.ajouterProduit, prod).then(() => this.route.navigateByUrl("/gestion-produit")))
     }else{
-      this._ajoutProduitService.ajouterProduit(this.ajouterProduit, undefined).then(() => this.route.navigateByUrl("/gestion-produit")))
+      this._ajoutProduitService.ajouterProduit(this.ajouterProduit, undefined).then(() => this.route.navigateByUrl("/gestion-produit"))
     }
   }
 

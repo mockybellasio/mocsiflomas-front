@@ -1,30 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Collegue } from '../auth/auth.domains';
-import { AuthService } from '../auth/auth.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
+import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-details-produits',
   templateUrl: `./details-produits.component.html`,
-  styleUrls: ['./details-produit.component.scss']
+  styles: []
 })
 export class DetailsProduitsComponent implements OnInit {
-  visiteur: Collegue
-  produit: Produit
+
+  @Input() produit: Produit
+  prod: Produit
   nomFigurine: string
   visiteur : any;
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService) {
-    this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
-    this.ps.chercherParNom(this.nomFigurine)
-      .subscribe(op => { this.produit = op, console.log(op) })
-    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
+  constructor(private route: ActivatedRoute, private ps: ProduitService) {
+
+    this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
+    ps.chercherParNom(this.nomFigurine)
+      .subscribe(op => this.produit = op)
+
   }
 
   ngOnInit() {
-
+    
   }
 
 
