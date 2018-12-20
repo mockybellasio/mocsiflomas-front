@@ -75,7 +75,7 @@
         Mes commandes
         </button>
 
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="/collegue/modifier"dropdown>
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo " id="ok" routerLink="/collegue/moncompte"dropdown>
            mon compte
         </button>
 
@@ -86,9 +86,11 @@
     </div>
 
     <div *ngIf="!visiteur.estAnonyme()">
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" (click)="seDeconnecter()"
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo" id="ok" (click)="seDeconnecter()"
             dropdown>
             Se déconnecter
         </button>
     </div>
 </nav>
+
+

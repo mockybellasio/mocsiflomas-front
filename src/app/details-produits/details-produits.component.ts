@@ -3,6 +3,8 @@ import { Produit } from '../ModelFolder/Produit';
 import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../ServiceFolder/produit.service';
 import { PanierService } from '../panier/panier.service';
+import { AuthService } from '../auth/auth.service';
+import { Collegue } from '../auth/auth.domains';
 
 @Component({
   selector: 'app-details-produits',
@@ -12,11 +14,12 @@ import { PanierService } from '../panier/panier.service';
 export class DetailsProduitsComponent implements OnInit {
 
   @Input() produit: Produit
+  visiteur : Collegue
   prod: Produit
   nomFigurine: string
   qte: number;
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService,private _panierService: PanierService) {
+  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService , private _panierService: PanierService) {
     this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
     this.ps.chercherParNom(this.nomFigurine)
       .subscribe(op => { this.produit = op, console.log(op) })
