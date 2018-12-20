@@ -17,10 +17,12 @@ import { GestionProduitsComponent } from './gestion-produits/gestion-produits.co
 import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
+import { MonCompteComponent } from './mon-compte/mon-compte.component';
+import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { PanierComponent } from './panier/panier.component';
-import { RecherchePipe } from './pipes/recherche.pipe';
+import { DetailCollegueComponent} from './detail-collegue/detail-collegue.component';
+
 
 
 const routes: Routes = [
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
+ { path : 'collegue/modifier'                 , component: MonCompteComponent    },
+ { path : 'collegue'                          , component : DetailCollegueComponent  },
   { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
 ];
 
@@ -55,8 +59,11 @@ const routes: Routes = [
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
     PanierComponent,
+    MonCompteComponent,
+    MonCompteComponent,
+    DetailCollegueComponent,
 
-    RecherchePipe,
+   
   ],
   imports: [
     BrowserModule,
