@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-mon-compte',
   templateUrl: './mon-compte.component.html',
@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonCompteComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute, private CollegueService) {
+  }
   ngOnInit() {
   }
 

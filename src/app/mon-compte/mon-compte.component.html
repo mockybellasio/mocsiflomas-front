@@ -1,13 +1,12 @@
--------------------formulaire d'inscription------------------------->
+
 {{
     monModel.prenom
 }}
-<div class="alert alert-danger" role="alert" *ngIf="messageError">
-    {{messageError}}
+
 </div>
 <form (ngSubmit)="submit()" #monForm="ngForm" class="text-center border border-light p-5">
 
-    <p class="h4 mb-4">Inscription</p>
+    <p class="h4 mb-4">modifier mon formulaire </p>
 
     <div class="form-row mb-4">
         <div class="col">
@@ -53,7 +52,7 @@
     <input class="input-file" id=file type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
 
     <!-- Sign up button -->
-    <button mdbBtn color="info" block="true" class="my-4" [disabled]="!monForm.valid" routerLink="/collegue/modifier" type="submit">Modifier</button>
+    <button mdbBtn color="info" block="true" class="my-4" [disabled]="!monForm.valid" type="submit">Modifier</button>
   
 <!-- 
     <hr>

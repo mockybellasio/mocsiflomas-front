@@ -17,11 +17,11 @@ import { GestionProduitsComponent } from './gestion-produits/gestion-produits.co
 import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
+import { MonCompteComponent } from './mon-compte/mon-compte.component';
+import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { PanierComponent } from './panier/panier.component';
-import { RecherchePipe } from './pipes/recherche.pipe';
-import { MonCompteComponent } from './mon-compte/mon-compte.component';
+import { DetailCollegueComponent} from './detail-collegue/detail-collegue.component';
 
 
 
@@ -38,7 +38,8 @@ const routes: Routes = [
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
   { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
- { path : 'collegue/modifier'                 , component: MonCompteComponent    }
+ { path : 'collegue/modifier'                 , component: MonCompteComponent    },
+ { path : 'collegue'                          , component : DetailCollegueComponent  },
 ];
 
 
@@ -60,6 +61,7 @@ const routes: Routes = [
     PanierComponent,
     MonCompteComponent,
     MonCompteComponent,
+    DetailCollegueComponent,
 
    
   ],
