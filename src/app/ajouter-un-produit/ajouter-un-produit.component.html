@@ -1,4 +1,4 @@
-  <h1>{{ajouterProduit.nomFigurine}}</h1>
+<div *ngIf="visiteur.estAdmin()">
   <form (ngSubmit)="submit()" #activerBouton="ngForm">
     <div class="container">
       <!-------------------------nomFigurine | obligatoire------------------------->

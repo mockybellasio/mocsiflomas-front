@@ -19,11 +19,11 @@ export class DetailsProduitsComponent implements OnInit {
   nomFigurine: string
   qte: number;
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService , private _panierService: PanierService) {
+  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService, private _panierService: PanierService) {
     this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
     this.ps.chercherParNom(this.nomFigurine)
-      .subscribe(op => { this.produit = op, console.log(op) })
-    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
+      .subscribe(op => this.produit = op)
+    this._authService.verifierAuthentification().subscribe(v => this.visiteur = v)
   }
 
   ngOnInit() {

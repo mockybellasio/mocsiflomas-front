@@ -37,10 +37,10 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
- { path : 'collegue/moncompte'                 , component: MonCompteComponent    },
- { path : 'collegue/modifier'                          , component : DetailCollegueComponent  },
+  { path: 'collegue/moncompte', component: MonCompteComponent },
+  { path: 'collegue/modifier', component: DetailCollegueComponent },
   { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent },
-   { path : 'recherche-pipe'                       ,component : RecherchePipeComponent    }                  
+  { path: 'recherche-pipe', component: RecherchePipeComponent }
 ];
 
 
@@ -64,7 +64,7 @@ const routes: Routes = [
     MonCompteComponent,
     DetailCollegueComponent,
     RecherchePipeComponent
-   
+
   ],
   imports: [
     BrowserModule,

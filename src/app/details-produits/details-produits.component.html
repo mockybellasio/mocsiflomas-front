@@ -17,8 +17,9 @@
             <!-------------------------Si c'est un administrateur------------------------->
             <div class="col-3 text-right" *ngIf="visiteur.estAdmin()">
                 <div class="row-1">
-                        <button class="col btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
-                        <button class="col btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()"routerLink="/gestion-produit"></button>
+                    <button class="col btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
+                    <button class="col btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()"
+                        routerLink="/gestion-produit"></button>
                 </div>
                 <button class="row-1  btn btn-sm">Activer/Desactiver</button>
             </div>

@@ -1,12 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Collegue } from '../auth/auth.domains';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss']
+  styles: []
 })
 export class AccueilComponent implements OnInit {
 
