@@ -27,7 +27,7 @@
             </li>
             <li class="nav-item active">
                 <form class="uk-form" mdbWavesEffect>
-                                     <input class="form-control mr-sm-2" type="text" placeholder="recherche">
+                    <input class="form-control mr-sm-2" type="text" placeholder="recherche">
                     <!-- <input class="form-control mr-sm-2" [(ngModel)]="searchText" type="text" placeholder="recherche"> -->
                     <!-- <button class="btn-primary" (click)="rechercheFigurines()" routerLink="/liste-figurines" >Go</button> -->
                 </form>
@@ -44,15 +44,16 @@
             se connecter
         </button>
         <button type="button" class="btn dark indigo">
-            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" routerLink="/panier"
+                height="30" alt="mdb logo">
         </button>
     </div>
 
     <!-------------------------Si c'est un administrateur------------------------->
-    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="/gestion-produits"
-            dropdown>
-            Gestion Produits
+    <div *ngIf="visiteur.estAdmin()">
+        <button dropdownToggle mdbWavesEffect class=" btn dark indigo nav-item
+        dropdown" id="ok" routerLink="/gestion-produit" dropdown>
+        Gestion Produits
         </button>
         <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
             Gestion Commandes Clients
@@ -60,16 +61,17 @@
     </div>
 
     <!-------------------------Si c'est un utilisateur------------------------->
-    <div *ngIf="visiteur.aLeRole('ROLE_UTILISATEUR')">
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" dropdown>
-            Mes commandes
+    <div *ngIf="visiteur.estUtilisateur()">
+        <button dropdownToggle mdbWavesEffect class=" btn dark indigo nav-item dropdown" id="ok" dropdown>
+        Mes commandes
         </button>
         <button type="button" class="btn dark indigo">
-            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" routerLink="/panier"
+                height="30" alt="mdb logo">
         </button>
     </div>
 
-    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR') || visiteur.aLeRole('ROLE_UTILISATEUR')">
+    <div *ngIf="!visiteur.estAnonyme()">
         <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" (click)="seDeconnecter()"
             dropdown>
             Se déconnecter

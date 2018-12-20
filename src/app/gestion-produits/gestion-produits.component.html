@@ -1,6 +1,8 @@
 <!-------------------------creerProduit------------------------->
-<button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/ajoutProduit">Creer un nouveau produit</button>
-<br>
-<app-liste-produits></app-liste-produits>
-
-<br><br>
+<div *ngIf="visiteur.estAdmin()">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/ajoutProduit">Creer un nouveau
+        produit</button>
+    <br>
+    <app-liste-produits></app-liste-produits>
+    <br><br>
+</div>

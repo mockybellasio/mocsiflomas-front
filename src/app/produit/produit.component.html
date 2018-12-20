@@ -1,32 +1,25 @@
-<div class="container">
-  <img class="row justify-content-center" [src]="produit.nomImage" routerLink="/details-produits/{{produit.nomFigurine}}">
-  <div class="row">
-    <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
-      <a class="row">
-        Saga : {{produit.nomSaga}}
-      </a>
-      <a class="row">
-        figurine : {{produit.nomFigurine}}
-      </a>
-      <a class="row">
-        Prix : {{produit.prix}} €
-      </a>
-    </div>
+<mdb-card>
+  <div class="container">
+    <img class="img-fluid" src="{{produit.nomImage}}" routerLink="/details-produits/{{produit.nomFigurine}}">
+    <div class="row">
+      <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
+        <a class="row">
+          Saga : {{produit.nomSaga}}
+        </a>
+        <a class="row">
+          figurine : {{produit.nomFigurine}}
+        </a>
+        <a class="row">
+          Prix : {{produit.prix}} €
+        </a>
+      </div>
 
-    <!-------------------------Si c'est un administrateur------------------------->
-    <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-      <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
-      <button>Supprimer</button>
-      <button>Activer/Desactiver</button>
-    </div>
-
-    <!-------------------------Si c'est un visiteur/utilisateur------------------------->
-    <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
-      <a class="row"></a>
-      <input class="row" type="number" placeholder="Quantité">
-      <button class="row">Ajouter au panier</button>
+      <!-------------------------Si c'est un administrateur------------------------->
+      <div class="col-6 text-right" *ngIf="visiteur!=null && visiteur.estAdmin()">
+        <button class="row-1 btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
+        <button class="row-1 btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()" routerLink="/gestion-produit"></button>
+        <button class="row-1  btn btn-sm">Activer/Desactiver</button>
+      </div>
     </div>
   </div>
-</div>
-
-<div></div>
+</mdb-card>

@@ -1,10 +1,12 @@
 <!-- <form class="uk-form">
-    <input [(ngModel)]="searchText" placeholder="chercher une figurine">
+    <input [(ngModel)]="filter" placeholder="chercher une figurine">
   </form> -->
 <!-------------------------liste les produits------------------------->
-<div class="row">
-  <div class="col-6" *ngFor="let elem of lesProduits | recherche:searchText" > >
-
-    <app-produit [obsVisiteur]="collegueConnecte" [produit]="elem"></app-produit>
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let elem of lesProduits">
+      <!-- | filter:searchText -->
+      <app-produit [produit]="elem"></app-produit>
+    </div>
   </div>
 </div>

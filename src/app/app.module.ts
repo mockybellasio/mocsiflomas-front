@@ -19,23 +19,24 @@ import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { PanierComponent } from './panier/panier.component';
 import { RecherchePipe } from './pipes/recherche.pipe';
 import { RechercheComponent } from './recherche/recherche.component';
-
 
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'inscription', component: FormInscriptionComponent },
+  { path: 'panier', component: PanierComponent },
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent },
+  { path: 'gestion-produit', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
+  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
 ];
 
 
@@ -54,6 +55,8 @@ const routes: Routes = [
     MenuComponent,
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
+    PanierComponent,
+
     RecherchePipe,
     RechercheComponent,
   ],
