@@ -21,7 +21,8 @@ import { MonCompteComponent } from './mon-compte/mon-compte.component';
 import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { DetailCollegueComponent} from './detail-collegue/detail-collegue.component';
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
+import { ListeCommandeAdminComponent } from './liste-commande-admin/liste-commande-admin.component';
 
 
 
@@ -37,9 +38,10 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
- { path : 'collegue/modifier'                 , component: MonCompteComponent    },
- { path : 'collegue'                          , component : DetailCollegueComponent  },
-  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
+  { path: 'collegue/modifier', component: MonCompteComponent },
+  { path: 'collegue', component: DetailCollegueComponent },
+  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent },
+  { path: 'gestion-produit/allCommande', component: ListeCommandeAdminComponent }
 ];
 
 
@@ -62,8 +64,9 @@ const routes: Routes = [
     MonCompteComponent,
     MonCompteComponent,
     DetailCollegueComponent,
+    ListeCommandeAdminComponent,
 
-   
+
   ],
   imports: [
     BrowserModule,
