@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { Produit } from "../ModelFolder/Produit";
+import { ProduitComponent } from "../produit/produit.component";
 
 const URL_BACKEND = environment.baseUrl;
 @Injectable({
@@ -19,19 +20,19 @@ export class ProduitService {
   }
 
   //chercher par nomFigurine
-  chercherParNom(nomFigurine: String): Observable<Produit> {
+  chercherParNom(nomFigurine: string): Observable<Produit> {
     return this._http.get<Produit>(URL_BACKEND + `gestion-produit/${nomFigurine}`)
   }
 
   //base posée A MODIFIER
   modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
-    return this._http.patch(`${URL_BACKEND}gestion-produit/modifier-produit/${unProduit.nomFigurine}`,
+    return this._http.patch(`${URL_BACKEND}gestion-produit/modif-produit/${unProduit.nomFigurine}`,
       produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .toPromise().then((p: Produit) => p)
   }
 
-  SupprimerProduit(produit: Produit): Observable<any> {
-    return this._http.delete(`${URL_BACKEND}supprimer/${produit.nomFigurine}`)
+  SupprimerProduit(nomFigurine: string): Observable<void> {
+    return this._http.delete<void>(`${URL_BACKEND}gestion-produit/supprimer/${nomFigurine}`)
   }
 
 }

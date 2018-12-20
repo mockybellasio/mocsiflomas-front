@@ -1,32 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Produit } from '../ModelFolder/Produit';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProduitService } from '../ServiceFolder/produit.service';
 import { Collegue } from '../auth/auth.domains';
-import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { Produit } from '../ModelFolder/Produit';
+import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-details-produits',
   templateUrl: `./details-produits.component.html`,
-  styles: []
+  styleUrls: ['./details-produit.component.scss']
 })
 export class DetailsProduitsComponent implements OnInit {
-  @Input() obsVisiteur: Observable<Collegue>
   visiteur: Collegue
-  @Input() produit: Produit
-  prod: Produit
+  produit: Produit
   nomFigurine: string
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService) {
-    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
-    this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
-    ps.chercherParNom(this.nomFigurine)
-      .subscribe(op => this.produit = op)
-
+  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService) {
+    this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
+    this.ps.chercherParNom(this.nomFigurine)
+      .subscribe(op => { this.produit = op, console.log(op) })
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)//IIIIIIIIIIIIMMMMMMMMMMMPOOOOOOOOOOOOOOOORRRRRRRRRTTTTTTTAAAAAANNNNNNNTTTTTTT
   }
 
   ngOnInit() {
-    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
+
   }
 
 }

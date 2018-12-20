@@ -13,14 +13,24 @@ export class Collegue {
   }
 
   estAnonyme(): boolean {
-    return this.email == undefined || this.email=='';
+    return this.email == undefined || this.email == '';
   }
 
-  public aLeRole(role: string): boolean {
-    if (this.roles && this.roles.find(r => r === role)) {
-      return true
-    } else {
-      return false
+  estAdmin(): boolean {
+    for(let i=0; this.roles && i < this.roles.length; i++){
+      if(this.roles[i] == 'ROLE_ADMINISTRATEUR'){
+        return true
+      }
     }
+    return false
+  }
+
+  estUtilisateur(): boolean{
+    for(let i=0; this.roles && i < this.roles.length; i++){
+      if(this.roles[i] == 'ROLE_UTILISATEUR'){
+        return true
+      }
+    }
+    return false
   }
 }

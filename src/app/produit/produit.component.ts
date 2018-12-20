@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { Collegue } from '../auth/auth.domains';
+import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
 import { PanierService } from '../panier/panier.service';
+import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-produit',
@@ -10,22 +12,25 @@ import { PanierService } from '../panier/panier.service';
   styles: []
 })
 export class ProduitComponent implements OnInit {
-  @Input() obsVisiteur: Observable<Collegue>
   visiteur: Collegue
   @Input() produit: Produit
-  qte:number;
+  qte: number;
 
-  constructor(private _panierService: PanierService) {
-    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
+  constructor(private _panierService: PanierService, private __produitService: ProduitService, private route: Router, private _authService: AuthService) {
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
-  ajouterProduit(){
-    this._panierService.addPanier(this.qte,this.produit)
+  ajouterProduit() {
+    this._panierService.addPanier(this.qte, this.produit)
   }
 
   ngOnInit() {
-    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
+
+  supprimer() {
+    this.__produitService.SupprimerProduit(this.produit.nomFigurine).subscribe(() => this.route.navigateByUrl("/gestion-produit"));
+  }
+
 }
 
 

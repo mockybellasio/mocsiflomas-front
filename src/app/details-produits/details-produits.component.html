@@ -1,27 +1,28 @@
-<div class="container">
-    <div class="row">
-        <img class="col justify-content-center" src="{{produit.nomImage}}" width="250px" height="250px">
-        <div class="col">
+<div class="container border">
+    <div class="row align-items-center">
+        <img class="col-3 justify-content-center" src="{{produit.nomImage}}">
+        <div class="col-3">
             <a class="row">Saga : {{produit.nomSaga}}</a>
             <a class="row">figurine : {{produit.nomFigurine}}</a>
             <a class="row">Description : {{produit.description}}</a>
             <a class="row">numeroFigurine : {{produit.numeroFigurine}}</a>
             <a class="row">Prix : {{produit.prix}} €</a>
         </div>
-        <div class="col">
-            <div>
-                <a class="row"></a>
+        <div class="col-6">
+            <div class="row">
                 <input class="row" type="number" placeholder="Quantité">
                 <button class="row">Ajouter au panier</button>
             </div>
-            
+
             <!-------------------------Si c'est un administrateur------------------------->
-            <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-                <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
-                <button>Supprimer</button>
-                <button>Activer/Desactiver</button>
+            <div class="col-3 text-right" *ngIf="visiteur.estAdmin()">
+                <div class="row-1">
+                        <button class="col btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
+                        <button class="col btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()"routerLink="/gestion-produit"></button>
+                </div>
+                <button class="row-1  btn btn-sm">Activer/Desactiver</button>
             </div>
 
         </div>
-
-
+    </div>
+</div>

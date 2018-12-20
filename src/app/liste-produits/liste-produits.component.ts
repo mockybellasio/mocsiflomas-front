@@ -4,25 +4,25 @@ import { Collegue } from '../auth/auth.domains';
 import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
 import { ProduitService } from '../ServiceFolder/produit.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-produits',
   templateUrl: './liste-produits.component.html',
-  styles: []
+  styleUrls: ['./liste-produits.component.scss']
 })
 export class ListeProduitsComponent implements OnInit {
-  filter:string
+  filter: string
 
   lesProduits: Produit[]
   collegueConnecte: Observable<Collegue>;
 
-  constructor(private _produitService: ProduitService, private _authSrv: AuthService) {
+  constructor(private _produitService: ProduitService) {
     //utilise produit.service dans le dossier ServiceFolder
     this._produitService.listerProduits().then(col => { this.lesProduits = col, console.log(col) })
   }
 
   ngOnInit() {
-    this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
 
 }

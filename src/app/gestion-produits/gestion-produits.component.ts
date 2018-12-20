@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 import { Collegue } from '../auth/auth.domains';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-produits',
@@ -8,15 +9,15 @@ import { Collegue } from '../auth/auth.domains';
   styles: []
 })
 export class GestionProduitsComponent implements OnInit {
-  @Input() obsVisiteur: Observable<Collegue>
-  visiteur: Collegue
-
-  constructor() {
-    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
+visiteur = new Collegue({})
+  constructor(private _authService: AuthService, private route: Router) {
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
+    if (this.visiteur.estAnonyme()) {
+      this.route.navigateByUrl("/accueil")
+    }
   }
 
   ngOnInit() {
-    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
 
 }

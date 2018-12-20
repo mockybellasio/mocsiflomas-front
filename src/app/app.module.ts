@@ -23,7 +23,6 @@ import { PanierComponent } from './panier/panier.component';
 import { RecherchePipe } from './pipes/recherche.pipe';
 
 
-
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'inscription', component: FormInscriptionComponent },
@@ -32,11 +31,11 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent },
+  { path: 'gestion-produit', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent }
+  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
 ];
 
 
