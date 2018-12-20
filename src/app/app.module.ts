@@ -20,6 +20,7 @@ import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-pr
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
 import { RecherchePipe } from './pipes/recherche.pipe';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 
@@ -54,6 +55,7 @@ const routes: Routes = [
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
     RecherchePipe,
+    RechercheComponent,
   ],
   imports: [
     BrowserModule,

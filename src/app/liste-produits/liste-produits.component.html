@@ -1,9 +1,9 @@
-<form class="uk-form">
-    <input [(ngModel)]="filter" placeholder="chercher une figurine">
-  </form>
+<!-- <form class="uk-form">
+    <input [(ngModel)]="searchText" placeholder="chercher une figurine">
+  </form> -->
 <!-------------------------liste les produits------------------------->
 <div class="row">
-  <div class="col-6" *ngFor="let elem of lesProduits | filter:searchText" > >
+  <div class="col-6" *ngFor="let elem of lesProduits | recherche:searchText" > >
 
     <app-produit [obsVisiteur]="collegueConnecte" [produit]="elem"></app-produit>
   </div>
