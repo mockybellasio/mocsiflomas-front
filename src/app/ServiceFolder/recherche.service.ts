@@ -13,16 +13,17 @@ export class RechercheService {
   constructor(private _http: HttpClient) { }
 
   //Recherche produits par nomSaga
-rechercheParSaga(nomSaga:String): Observable<any> {
-  return this._http.get<Produit>(`${URL_BACKEND}recherche?=${nomSaga}`)
-}
+  rechercheParSaga(nomSaga: String): Observable<any> {
+    return this._http.get<Produit>(`${URL_BACKEND}recherche?=${nomSaga}`)
+  }
 
   //Recherche produits par personnage
-  rechercheParPerso(personnage:String): Observable<any> {
+  rechercheParPerso(personnage: String): Observable<any> {
     return this._http.get<Produit>(`${URL_BACKEND}recherche?=${personnage}`)
 }
-  //Recherche produits par nomSaga & personnage
-  rechercheAll(personnage:String, nomSaga:String): Observable<any> {
-    return this._http.get<Produit>(`${URL_BACKEND}recherche?=${personnage}?=${nomSaga}`)
+  //Recherche produits bis
+  rechercheAll(personnage:String, nomSaga:String) {
+    const URL_BACKEND = environment.baseUrl + `recherche?personnage=${personnage}&nomSaga=${nomSaga}`;
+    return this._http.get<Produit[]>(URL_BACKEND);
 }
 }

@@ -23,21 +23,22 @@ export class ProduitService {
     return this._http.get<Produit>(URL_BACKEND + `gestion-produit/${nomFigurine}`)
   }
 
-  //base posée A MODIFIER
+  //modifier un produit
   modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
     return this._http.patch(`${URL_BACKEND}gestion-produit/modif-produit/${unProduit.nomFigurine}`,
       produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
-      
+
       .toPromise().then((p: Produit) => p)
   }
 
+  //supprimer un produit
   SupprimerProduit(nomFigurine: string): Observable<void> {
     return this._http.delete<void>(`${URL_BACKEND}gestion-produit/supprimer/${nomFigurine}`)
   }
 
-ActiverDesactiver(nomFigurine : string ){
-
-  return this._http.get(status)
-}
+  //bases
+  ActiverDesactiver(nomFigurine: string) {
+    return this._http.get(status)
+  }
 
 }

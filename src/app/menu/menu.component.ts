@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Collegue } from '../auth/auth.domains';
+import { AuthService } from '../auth/auth.service';
 import { RechercheService } from '../ServiceFolder/recherche.service';
 
 @Component({
@@ -15,8 +14,8 @@ export class MenuComponent implements OnInit {
   searchText: string
   visiteur: Collegue
 
-  constructor(private _recherche: RechercheService, private _authSrv: AuthService, private _router: Router, private _authService:AuthService) {
-    this._authService.collegueConnecteObs.subscribe(v => {this.visiteur = v; console.log(this.visiteur)});
+  constructor(private _recherche: RechercheService, private _authSrv: AuthService, private _router: Router, private _authService: AuthService) {
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v);
   }
 
   ngOnInit() {
