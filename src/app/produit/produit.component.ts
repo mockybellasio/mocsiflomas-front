@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { Collegue } from '../auth/auth.domains';
-import { Produit,  } from '../ModelFolder/Produit';
-import { ProduitService, } from '../ServiceFolder/produit.service';
-import {  Router } from '@angular/router';
-
+import { AuthService } from '../auth/auth.service';
+import { Produit } from '../ModelFolder/Produit';
+import { PanierService } from '../panier/panier.service';
+import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-produit',
@@ -12,46 +12,27 @@ import {  Router } from '@angular/router';
   styles: []
 })
 export class ProduitComponent implements OnInit {
-  @Input() obsVisiteur: Observable<Collegue>
   visiteur: Collegue
   @Input() produit: Produit
-   lesProduits: Produit[]
+  qte: number;
 
-  constructor(private _produitService: ProduitService, private route: Router ) {
-    this.visiteur = new Collegue({ nom: "", prenom: "", email: "", motDePasse: "", roles: [] })
+  constructor(private _panierService: PanierService, private __produitService: ProduitService, private route: Router, private _authService: AuthService) {
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
+  }
+
+  ajouterProduit() {
+    this._panierService.addPanier(this.qte, this.produit)
   }
 
   ngOnInit() {
-
-    this.obsVisiteur.subscribe(coll => this.visiteur = coll);
   }
 
-  supprimer(){ 
-
-    
-
-    //this.lesProduits.splice( this.lesProduits.findIndex(p => p === produit),1)
-
-    this._produitService.SupprimerProduit(this.produit.nomFigurine).subscribe()
-    this.route.navigate[("/gestion-Produits")]
-
-
-  //this.SupprimerProduit().then(col => { this.lesProduits = col, console.log(col) })
-
-  //produit.filter(p => p !== this.produit)
-
-    //this.produit = this.produit.filter(p => p !== produit)
-
-
-  // delete(produitASupprimer:Produit){
-
-  //   this.produits.splice(this.produits.findIndex(p => p === produitASupprimer),1)
-
-  //   this._produitsServices.deleteUnProduit(produitASupprimer.reference).subscribe()
-
+  supprimer() {
+    this.__produitService.SupprimerProduit(this.produit.nomFigurine).subscribe(() => this.route.navigateByUrl("/gestion-produit"));
+  }
 
 }
 
-}
+
 
 

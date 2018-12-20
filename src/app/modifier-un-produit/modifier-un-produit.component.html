@@ -1,0 +1,51 @@
+<div *ngIf = "visiteur.estAdmin()">
+<h1>{{produit.nomFigurine}}</h1>
+<form (ngSubmit)="submit()" #activerBouton="ngForm">
+  <div class="container">
+    <!-------------------------nomFigurine | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Nom de la figurine : {{produit.nomFigurine}}</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.nomFigurine" name="nomFigurine"
+        placeholder="Nom de la figurine" #matricule="ngModel">
+    </div>
+    <!-------------------------nomSaga | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Nom de la saga : {{produit.nomSaga}}</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.nomSaga" name="nomSaga"
+        #matricule="ngModel" placeholder="Nom de la saga">
+    </div>
+    <!-------------------------personnage | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Personnage : {{produit.personnage}}</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.personnage" name="personnage"
+        #matricule="ngModel" placeholder="Personnage">
+    </div>
+    <!-------------------------description | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Description : {{produit.description}}</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.description" name="description"
+        placeholder="Description" #matricule="ngModel">
+    </div>
+    <!-------------------------taille | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Taille : {{produit.taille}} (centimètres)</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.taille" name="taille" #matricule="ngModel"
+        placeholder="Taille" type="number">
+    </div>
+    <!-------------------------numeroFigurine | pas obligatoire------------------------->
+    <div class="row form mb-4">
+      <label class="col-6">Numero de la figurine : {{produit.numeroFigurine}}</label>
+      <input class="col-6 justify-content-center form-control" [(ngModel)]="produit.numeroFigurine" name="numeroFigurine"
+        #matricule="ngModel" type="number" placeholder="Numero de la figurine">
+    </div>
+    <!-------------------------nomImage | pas obligatoire------------------------->
+    <div class="row form mb-4 justify-content-center">
+      <h4><label for="file" class="label-file">Choisir une image</label></h4>
+      <input class="input-file" id=file type="file" placeholder="Upload your file" (change)="onFileChanged($event)">
+    </div>
+    <div class="row justify-content-center">
+      <button mdbBtn color="primary" type="submit" class="col my-4" [disabled]="!activerBouton.valid">Modifier</button>
+    </div>
+  </div>
+</form>
+</div>

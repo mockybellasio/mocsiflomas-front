@@ -25,21 +25,21 @@ import { DetailCollegueComponent} from './detail-collegue/detail-collegue.compon
 
 
 
-
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'inscription', component: FormInscriptionComponent },
+  { path: 'panier', component: PanierComponent },
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: 'ajoutProduit', component: AjouterUnProduitComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'gestion-produits', component: GestionProduitsComponent },
+  { path: 'gestion-produit', component: GestionProduitsComponent },
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
  { path : 'collegue/modifier'                 , component: MonCompteComponent    },
  { path : 'collegue'                          , component : DetailCollegueComponent  },
+  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
 ];
 
 
