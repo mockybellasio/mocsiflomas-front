@@ -6,13 +6,10 @@
             <a class="row">prenom : {{user.prenom}}</a>
             <a class="row">password: {{user.password}}</a>
             <a class="row">adresse : {{user.adresse}}</a>
-            <a class="row">telephone : {{user.telephone}} €</a>
+            <a class="row">telephone : {{user.telephone}}</a>
         </div>
         <div class="col">
-           
-            <!-------------------------Si c'est un administrateur------------------------->
-
-            <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-                <button routerLink="/collegue/modifier">Modifier</button>
-
-              
+            <button routerLink="/collegue/modifier">Modifier</button>
+        </div>
+    </div>
+</div>

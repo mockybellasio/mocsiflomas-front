@@ -2,6 +2,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormUser, User } from '../ModelFolder/FormUser';
 import { ActivatedRoute } from '@angular/router';
+import { CollegueService } from '../ServiceFolder/collegue.service';
+import { Collegue } from '../auth/auth.domains';
 // import { UserService} from '../ServiceFolder/collegue.service'
 
 @Component({
@@ -14,19 +16,16 @@ import { ActivatedRoute } from '@angular/router';
   styles: []
 })
 export class DetailCollegueComponent implements OnInit {
-  @Input () user : User
+  user: Collegue
   nom: string
-  prenom: string 
   email: string
-  adresse : string 
-  phone : string 
 
-  constructor(private route: ActivatedRoute, private ps : any) {
+  constructor(private route: ActivatedRoute, private _collegueService: CollegueService) {
 
-    this.user.nom = route.snapshot.paramMap.get("nomCollegue")
-     ps.chercherParNom(this.user.nom).subscribe(op => this.user = op )
-
-   }
+    this.nom = route.snapshot.paramMap.get("nomCollegue")
+    this._collegueService.chercherParEmail(this.user.email)
+    .subscribe(u => this.user = u)
+  }
 
   ngOnInit() {
   }

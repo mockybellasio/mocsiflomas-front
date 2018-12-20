@@ -10,8 +10,8 @@
         </div>
         <div class="col-6">
             <div class="row">
-                <input class="row" type="number" placeholder="Quantité">
-                <button class="row">Ajouter au panier</button>
+                <input class="row" [(ngModel)]="qte" type="number" placeholder="Quantité">
+                <button class="row" (click)="ajouterProduit()">Ajouter au panier</button>
             </div>
 
             <!-------------------------Si c'est un administrateur------------------------->
