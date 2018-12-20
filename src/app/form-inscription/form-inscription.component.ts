@@ -23,13 +23,13 @@ export class FormInscriptionComponent implements OnInit {
       if (this.file) {
         this.pService.CreateUser(this.file).subscribe(col => {
           this.pService.saveClient(this.monModel, col)
-            .then(val => this.router.navigate(['/auth']).catch(error => console.log("toto")))
+            .then(() => this.router.navigate(['/auth']).catch(error => console.log("toto")))
         });
       } else {
         this.pService.saveClient(this.monModel, undefined)
-          .then(val => this.router.navigate(['/auth']))
-          .catch(error=>{this.messageError=error.error.message; console.log(error);})
-        
+          .then(() => this.router.navigate(['/auth']))
+          .catch(error => { this.messageError = error.error.message; console.log(error); })
+
       }
     } else {
       this.messageError = "mot de passe differant"
@@ -48,8 +48,6 @@ export class FormInscriptionComponent implements OnInit {
   test(value) {
 
   }
-
-
   // verifpwd() {
   //   let elem = document.getElementById("defaultRegisterFormPasswordconfirm");
   //   if (this.verifPassWord != undefined && this.monModel.password) {

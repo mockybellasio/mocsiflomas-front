@@ -27,17 +27,16 @@ export class AjouterUnProduitComponent implements OnInit {
 
   submit() {
     //utilise ajouter-un-produit.service dans le dossier ajouter-un-produit
-    
-    if(this.file){
+
+    if (this.file) {
       this._ajoutProduitService.creerProduit(this.file).subscribe(prod => this._ajoutProduitService.ajouterProduit(this.ajouterProduit, prod).then(() => this.route.navigateByUrl("/gestion-produit")))
-    }else{
-      this._ajoutProduitService.ajouterProduit(this.ajouterProduit, undefined).then(() => this.route.navigateByUrl("/gestion-produit")))
+    } else {
+      this._ajoutProduitService.ajouterProduit(this.ajouterProduit, undefined).then(() => this.route.navigateByUrl("/gestion-produit"))
     }
   }
 
   onFileChanged(event) {
     this.file = event.target.files[0];
-    console.log(this.file);
   }
 
 }

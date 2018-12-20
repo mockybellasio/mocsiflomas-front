@@ -22,6 +22,7 @@ export class AuthComponent implements OnInit {
   }
 
   connecter() {
+    
     this._authSrv.connecter(this.collegue.email, this.collegue.motDePasse)
       .subscribe(
         // en cas de succès, redirection vers la page /tech

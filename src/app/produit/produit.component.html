@@ -1,11 +1,8 @@
-<mdb-card>
+<mdb-card class="marge-produit" routerLink="/details-produits/{{produit.nomFigurine}}">
   <div class="container">
-    <img class="img-fluid" src="{{produit.nomImage}}" routerLink="/details-produits/{{produit.nomFigurine}}">
+    <img class="img-fluid" src="{{produit.nomImage}}" >
     <div class="row">
-      <div class="col-4" routerLink="/details-produits/{{produit.nomFigurine}}">
-        <a class="row">
-          Saga : {{produit.nomSaga}}
-        </a>
+      <div class="col-6">
         <a class="row">
           figurine : {{produit.nomFigurine}}
         </a>
@@ -18,8 +15,9 @@
       <div class="col-6 text-right" *ngIf="visiteur!=null && visiteur.estAdmin()">
         <button class="row-1 btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
         <button class="row-1 btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()" routerLink="/gestion-produit"></button>
-        <button class="row-1  btn btn-sm">Activer/Desactiver</button>
+        
       </div>
+      <button *ngIf="visiteur!=null && visiteur.estAdmin()" class="row-1  btn btn-sm">Activer/Desactiver</button>
     </div>
   </div>
 </mdb-card>

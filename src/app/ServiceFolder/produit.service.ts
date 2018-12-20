@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { Produit } from "../ModelFolder/Produit";
-import { ProduitComponent } from "../produit/produit.component";
 
 const URL_BACKEND = environment.baseUrl;
 @Injectable({
@@ -28,11 +27,17 @@ export class ProduitService {
   modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
     return this._http.patch(`${URL_BACKEND}gestion-produit/modif-produit/${unProduit.nomFigurine}`,
       produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+
       .toPromise().then((p: Produit) => p)
   }
 
   SupprimerProduit(nomFigurine: string): Observable<void> {
     return this._http.delete<void>(`${URL_BACKEND}gestion-produit/supprimer/${nomFigurine}`)
+  }
+
+  ActiverDesactiver(nomFigurine: string) {
+
+    return this._http.get(status)
   }
 
 }
