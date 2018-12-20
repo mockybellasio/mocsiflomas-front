@@ -19,7 +19,6 @@ export class DetailsProduitsComponent implements OnInit {
     this.nomFigurine = route.snapshot.paramMap.get("nomFigurine")
     ps.chercherParNom(this.nomFigurine)
       .subscribe(op => this.produit = op)
-
   }
 
   ngOnInit() {
