@@ -18,7 +18,7 @@
 
             <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
                 <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
-                <button>Supprimer</button>
+                <button  (click) ="supprimer()">Supprimer</button>
                 <button>Activer/Desactiver</button>
             </div>
 

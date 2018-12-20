@@ -48,8 +48,6 @@ export class FormInscriptionComponent implements OnInit {
   test(value) {
 
   }
-
-
   // verifpwd() {
   //   let elem = document.getElementById("defaultRegisterFormPasswordconfirm");
   //   if (this.verifPassWord != undefined && this.monModel.password) {

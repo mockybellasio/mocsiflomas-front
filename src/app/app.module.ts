@@ -21,6 +21,8 @@ import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
 import { PanierComponent } from './panier/panier.component';
 import { RecherchePipe } from './pipes/recherche.pipe';
+import { MonCompteComponent } from './mon-compte/mon-compte.component';
+
 
 
 
@@ -36,8 +38,7 @@ const routes: Routes = [
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
   { path: 'gestion-produits/modifier-produit', component: ModifierUnProduitComponent },
-  { path : 'gestion-produits/supprimer-produit', component :ProduitComponent },
-  { path : 'gestion-produits/activer-desactiver-produit', component : ProduitComponent}
+ { path : 'collegue/modifier'                 , component: MonCompteComponent    }
 ];
 
 
@@ -57,8 +58,10 @@ const routes: Routes = [
     DetailsProduitsComponent,
     ModifierUnProduitComponent,
     PanierComponent,
+    MonCompteComponent,
+    MonCompteComponent,
 
-    RecherchePipe,
+   
   ],
   imports: [
     BrowserModule,

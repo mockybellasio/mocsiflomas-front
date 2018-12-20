@@ -13,7 +13,11 @@ export class ModifierUnProduitComponent implements OnInit {
   constructor(private _produitService: ProduitService) { }
 
   ngOnInit() {
+
     //this._produitService.modifierProduit(this.produit,this.produit)
+
   }
 
+  submit(){}
+  
 }

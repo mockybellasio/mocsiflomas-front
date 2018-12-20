@@ -16,15 +16,15 @@
     <!-------------------------Si c'est un administrateur------------------------->
     <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
       <button routerLink="/gestion-produits/modifier-produit">Modifier</button>
-      <button (click) ="supprimer()">Supprimer</button>
-      <button routerLink="/gestion-produits/activer-desactiver-produit" >Activer/Desactiver</button>
+      <button (click) ="supprimer()"> supprimer </button>
+      <button (click) = "Activer/Desactiver()"> Activer/Desactiver </button>
     </div>
 
-    <!-------------------------Si c'est un visiteur/utilisateur------------------------->
+    <!-- -----------------------Si c'est un visiteur/utilisateur-----------------------
     <div class="col-8" *ngIf="visiteur.estAnonyme() || visiteur.aLeRole('ROLE_UTILISATEUR')">
       <a class="row"></a>
       <input class="row" type="number" placeholder="Quantité">
       <button class="row">Ajouter au panier</button>
     </div>
   </div>
-</div>
+</div> -->

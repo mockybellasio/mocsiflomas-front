@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { Produit } from "../ModelFolder/Produit";
+import { ActivatedRoute, Router } from '@angular/router';
 
 const URL_BACKEND = environment.baseUrl;
 @Injectable({
@@ -25,14 +26,33 @@ export class ProduitService {
 
   //base posée A MODIFIER
   modifierProduit(unProduit: Produit, produit: Produit): Promise<Produit> {
+
     return this._http.patch(`${URL_BACKEND}gestion-produits/modifier-produit/${unProduit.nomFigurine}`,
+
       produit, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+      
       .toPromise().then((p: Produit) => p)
   }
 
-  SupprimerProduit(nomFigurine : string ): Observable<any> {
-    return this._http.delete(`${URL_BACKEND}supprimer/${nomFigurine}`)
+  // supprimer produit 
+
+ SupprimerProduit(nomFigurine : string ): Observable<void> {
+
+    //console.log(`${URL_BACKEND}supprimer/${nomFigurine}`);
+
+    //this._http.delete(`${URL_BACKEND}supprimer/${nomFigurine}`) //.subscribe(() => this.router.navigate(['/RonPop']));
+    
+const URL_BACKEND = environment.baseUrl + `produits/${nomFigurine} `;
+
+return this._http.delete<void>( URL_BACKEND);
+
+
 
   }
+
+ActiverDesactiver(nomFigurine : string ){
+
+  return this._http.get(status)
+}
 
 }

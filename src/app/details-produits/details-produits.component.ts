@@ -13,6 +13,7 @@ export class DetailsProduitsComponent implements OnInit {
   @Input() produit: Produit
   prod: Produit
   nomFigurine: string
+  visiteur : any;
 
   constructor(private route: ActivatedRoute, private ps: ProduitService) {
 
@@ -24,6 +25,7 @@ export class DetailsProduitsComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }
 
