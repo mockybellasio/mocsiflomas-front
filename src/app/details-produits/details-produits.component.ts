@@ -4,6 +4,7 @@ import { Collegue } from '../auth/auth.domains';
 import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
 import { ProduitService } from '../ServiceFolder/produit.service';
+import { PanierService } from '../panier/panier.service';
 
 @Component({
   selector: 'app-details-produits',
@@ -14,8 +15,9 @@ export class DetailsProduitsComponent implements OnInit {
   visiteur: Collegue
   produit: Produit
   nomFigurine: string
+  qte: number;
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService) {
+  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService,private _panierService: PanierService) {
     this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
     this.ps.chercherParNom(this.nomFigurine)
       .subscribe(op => { this.produit = op, console.log(op) })
@@ -24,6 +26,10 @@ export class DetailsProduitsComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ajouterProduit() {
+    this._panierService.addPanier(this.qte, this.produit)
   }
 
 }

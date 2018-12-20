@@ -11,8 +11,9 @@ import { AuthService } from "./auth/auth.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  constructor() {
+  visiteur = new Collegue({})
+  constructor(private _authService: AuthService) {
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
   /**

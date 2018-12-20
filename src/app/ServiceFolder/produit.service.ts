@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { Produit } from "../ModelFolder/Produit";
-import { ProduitComponent } from "../produit/produit.component";
 
 const URL_BACKEND = environment.baseUrl;
 @Injectable({
