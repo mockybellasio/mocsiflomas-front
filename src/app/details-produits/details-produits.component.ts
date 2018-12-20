@@ -21,7 +21,7 @@ export class DetailsProduitsComponent implements OnInit {
     this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
     this.ps.chercherParNom(this.nomFigurine)
       .subscribe(op => this.produit = op)
-    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
+    this._authService.verifierAuthentification().subscribe(v => this.visiteur = v)
   }
 
   ngOnInit() {

@@ -19,12 +19,14 @@ export class ProduitComponent implements OnInit {
     this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
-
   ngOnInit() {
   }
 
   supprimer() {
-    this._produitService.SupprimerProduit(this.produit.nomFigurine).subscribe(() => { this.route.navigateByUrl("/gestion-produit"); this._produitService.listerProduits() });
+    this._produitService.SupprimerProduit(this.produit.nomFigurine)
+      .subscribe(() => setTimeout(() => {
+        this.route.navigateByUrl("/gestion-produit")
+      }, 2000));
   }
 
 }
