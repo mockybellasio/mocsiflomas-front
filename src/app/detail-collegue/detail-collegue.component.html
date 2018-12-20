@@ -3,23 +3,13 @@
         <img class="col justify-content-center" [src]="produit.nomImage" width="250px" height="250px">
         <div class="col">
             <a class="row">nom: {{user.nom}}</a>
-            <a class="row">prenom : {{nom.nomFigurine}}</a>
-            <a class="row">password: {{produit.description}}</a>
-            <a class="row">adresse : {{produit.numeroFigurine}}</a>
-            <a class="row">telephone : {{produit.prix}} €</a>
+            <a class="row">prenom : {{user.prenom}}</a>
+            <a class="row">password: {{user.password}}</a>
+            <a class="row">adresse : {{user.adresse}}</a>
+            <a class="row">telephone : {{user.telephone}}</a>
         </div>
         <div class="col">
-           
-            <!-------------------------Si c'est un administrateur------------------------->
-
-            <div *ngIf="visiteur.aLeRole('ROLE_ADMINISTRATEUR')">
-                <button routerLink="/collegue/modifier">Modifier</button>
-
-                <!-- prenom: string;
-                nom: string;
-                dateN:Date;
-                email:string;
-                password:string;
-                verifPassWord=function(psw2:string){return  this.password==psw2}
-                adress:string;
-                phone:string; -->
+            <button routerLink="/collegue/modifier">Modifier</button>
+        </div>
+    </div>
+</div>
