@@ -36,14 +36,6 @@
     </div>
 
     <!-------------------------Si c'est un visiteur------------------------->
-
-    <!-- <div *ngIf="visiteur.estAnonyme()">
-        <button type="button" class="btn dark indigo" routerLink="/collegue/modifier">
-            modifier mon compte
-        </button> -->
-
-
-
     <div *ngIf="visiteur.estAnonyme()">
         <button type="button" class="btn dark indigo" routerLink="/inscription">
             s'inscrire
@@ -52,8 +44,8 @@
         <button type="button" class="btn dark indigo" routerLink="/auth">
             se connecter
         </button>
-        <button type="button" class="btn dark indigo">
-            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" routerLink="/panier"
+        <button type="button" class="btn dark indigo" routerLink="/panier">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" 
                 height="30" alt="mdb logo">
         </button>
     </div>
