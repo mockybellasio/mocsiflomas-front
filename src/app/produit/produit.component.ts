@@ -15,7 +15,7 @@ export class ProduitComponent implements OnInit {
   @Input() produit: Produit
 
 
-  constructor(private __produitService: ProduitService, private route: Router, private _authService: AuthService) {
+  constructor(private _produitService: ProduitService, private route: Router, private _authService: AuthService) {
     this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
@@ -24,7 +24,7 @@ export class ProduitComponent implements OnInit {
   }
 
   supprimer() {
-    this.__produitService.SupprimerProduit(this.produit.nomFigurine).subscribe(() => this.route.navigateByUrl("/gestion-produit"));
+    this._produitService.SupprimerProduit(this.produit.nomFigurine).subscribe(() => { this.route.navigateByUrl("/gestion-produit"); this._produitService.listerProduits() });
   }
 
 }

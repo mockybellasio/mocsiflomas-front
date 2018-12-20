@@ -31,12 +31,10 @@ export class MonCompteComponent implements OnInit {
         this.pService.saveClient(this.monModel, undefined)
           .then(val => this.router.navigate(['/auth']))
           .catch(error=>{this.messageError=error.error.message; console.log(error);})
-        
       }
     } else {
       this.messageError = "mot de passe differant"
     }
-
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Collegue } from "./auth/auth.domains";
 import { AuthService } from "./auth/auth.service";
 
@@ -8,10 +9,12 @@ import { AuthService } from "./auth/auth.service";
 @Component({
   selector: 'app-root',
   templateUrl: `./app.html`,
-  styleUrls: ['./app.component.scss']
+  styles: []
 })
 export class AppComponent implements OnInit {
   visiteur = new Collegue({})
+  utilisateurConnecte: Observable<Collegue>
+
   constructor(private _authService: AuthService) {
     this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
@@ -21,8 +24,8 @@ export class AppComponent implements OnInit {
    *
    * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
    */
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.utilisateurConnecte = this._authService.collegueConnecteObs
   }
 
 

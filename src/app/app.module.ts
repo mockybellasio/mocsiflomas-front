@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthComponent } from './auth/auth.component';
 import { StatutConnecteService } from "./auth/statut-connecte.service";
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
@@ -21,8 +22,6 @@ import { MonCompteComponent } from './mon-compte/mon-compte.component';
 import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
-import { DetailCollegueComponent} from './detail-collegue/detail-collegue.component';
-
 
 
 const routes: Routes = [
@@ -37,8 +36,8 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
- { path : 'collegue/modifier'                 , component: MonCompteComponent    },
- { path : 'collegue'                          , component : DetailCollegueComponent  },
+  { path: 'collegue/modifier', component: MonCompteComponent },
+  { path: 'collegue', component: DetailCollegueComponent },
   { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
 ];
 
@@ -63,7 +62,7 @@ const routes: Routes = [
     MonCompteComponent,
     DetailCollegueComponent,
 
-   
+
   ],
   imports: [
     BrowserModule,

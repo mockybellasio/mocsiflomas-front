@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Collegue } from '../auth/auth.domains';
 import { AuthService } from '../auth/auth.service';
 import { Produit } from '../ModelFolder/Produit';
-import { ProduitService } from '../ServiceFolder/produit.service';
 import { PanierService } from '../panier/panier.service';
+import { ProduitService } from '../ServiceFolder/produit.service';
 
 @Component({
   selector: 'app-details-produits',
@@ -17,10 +17,10 @@ export class DetailsProduitsComponent implements OnInit {
   nomFigurine: string
   qte: number;
 
-  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService,private _panierService: PanierService) {
+  constructor(private route: ActivatedRoute, private ps: ProduitService, private _authService: AuthService, private _panierService: PanierService) {
     this.nomFigurine = this.route.snapshot.paramMap.get("nomFigurine")
     this.ps.chercherParNom(this.nomFigurine)
-      .subscribe(op => { this.produit = op, console.log(op) })
+      .subscribe(op => this.produit = op)
     this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
