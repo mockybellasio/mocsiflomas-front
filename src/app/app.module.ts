@@ -19,9 +19,11 @@ import { ListeProduitsComponent } from './liste-produits/liste-produits.componen
 import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { MonCompteComponent } from './mon-compte/mon-compte.component';
-import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { TechComponent } from './tech/tech.component';
+import { PanierComponent } from './panier/panier.component';
+import { RecherchePipe } from './pipes/recherche.pipe';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 const routes: Routes = [
@@ -61,8 +63,8 @@ const routes: Routes = [
     MonCompteComponent,
     MonCompteComponent,
     DetailCollegueComponent,
-
-
+    RecherchePipe,
+    RechercheComponent,
   ],
   imports: [
     BrowserModule,
