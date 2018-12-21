@@ -18,6 +18,11 @@ export class ProduitService {
       .then((tabProd: any[]) => tabProd.map(prod => new Produit(prod.nomSaga, prod.nomImage, prod.personnage, prod.nomFigurine, prod.taille, prod.prix, prod.description, prod.numeroFigurine)))
   }
 
+  //chercher par nomSaga
+  listerParSaga(nomSaga: string): Observable<Produit> {
+    return this._http.get<Produit>(URL_BACKEND + `gestion-produit/${nomSaga}`)
+  }
+
   //chercher par nomFigurine
   chercherParNom(nomFigurine: string): Observable<Produit> {
     return this._http.get<Produit>(URL_BACKEND + `gestion-produit/${nomFigurine}`)

@@ -11,9 +11,11 @@ import { PanierService } from './panier.service';
 export class PanierComponent implements OnInit {
   valuePanier: Array<any>;
   total: number = 0;
-
+  show: boolean = true;
+  
   constructor(private panierServ: PanierService) {
     this.valuePanier = panierServ.readPanier()
+    console.log(this.valuePanier.length)
     this.calculeTotal();
   }
 

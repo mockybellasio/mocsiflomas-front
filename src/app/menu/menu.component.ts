@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Collegue } from '../auth/auth.domains';
 import { AuthService } from '../auth/auth.service';
-import { RechercheService } from '../ServiceFolder/recherche.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,17 +12,22 @@ export class MenuComponent implements OnInit {
   @Input() rechercheAll
   searchText: string
   visiteur: Collegue
+  saga: string
 
-  constructor(private _recherche: RechercheService, private _authSrv: AuthService, private _router: Router, private _authService: AuthService) {
+  constructor(private _router: Router, private _authService: AuthService/*, private _produitService: ProduitService*/) {
     this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v);
   }
 
   ngOnInit() {
   }
 
+  chercherParSaga(saga) {
+    // this._produitService.listerParSaga()
+  }
+
   seDeconnecter() {
     //la deconnection redirige sur la page accueil
-    this._authSrv.seDeconnecter().subscribe(
+    this._authService.seDeconnecter().subscribe(
       () => this._router.navigate(['/accueil'])
     );
   }
