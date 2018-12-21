@@ -1,0 +1,20 @@
+<!-- <form class="uk-form">
+    <input [(ngModel)]="filter" placeholder="chercher une figurine">
+  </form> -->
+<!-------------------------liste les produits------------------------->
+<div class="container">
+  <div class="row" *ngFor="let elem of listCommande">
+    <div class="col-3" >     
+      {{elem.numero}}
+    </div>
+    <div class="col-3" >     
+      {{elem.comClient.nom}}
+    </div>
+    <div class="col-3" >     
+      {{sommeTotal(elem)}}€
+    </div>
+    <div class="col-3" >     
+      {{elem.dateCommande}}
+    </div>
+  </div>
+</div>
