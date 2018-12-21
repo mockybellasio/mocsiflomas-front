@@ -16,15 +16,7 @@
         <button class="row-1 btn btn-primary btn-sm fa fa-pencil" aria-hidden="true" routerLink="/gestion-produit/modif-produit/{{produit.nomFigurine}}"></button>
         <button class="row-1 btn btn-danger btn-sm fa fa-trash" aria-hidden="true" (click)="supprimer()" routerLink="/gestion-produit"></button>
       </div>
-      <button *ngIf="visiteur!=null && visiteur.estAdmin()" class="row-1 btn btn-sm">Activer/Desactiver</button>
-      <!-- Default switch -->
-      <form action="">
-        <!-- Default checked -->
-        <label class="bs-switch">
-          <input type="checkbox">
-          <span class="slider round "></span>
-        </label>
-      </form>
+      <!-- <button *ngIf="visiteur!=null && visiteur.estAdmin()" class="row-1 btn btn-sm">Activer/Desactiver</button> -->
       
     </div>
   </div>

@@ -16,7 +16,7 @@ export class MonCompteComponent implements OnInit {
   email: string
  imgUrl : string
   constructor(private _authService: AuthService, private _collegueService: CollegueService) {
-    this._authService.collegueConnecteObs.subscribe(v => {this.visiteur = v ; this._collegueService.chercherParNom(this.visiteur.nom).then(u =>{ this.user = u})})
+    this._authService.verifierAuthentification().subscribe(v => {this.visiteur = v ; this._collegueService.chercherParNom(this.visiteur.nom).then(u =>{ this.user = u})})
 
     //this.nom = route.snapshot.paramMap.get("nomCollegue")
     //his._collegueService.chercherParNom(this.nom)
