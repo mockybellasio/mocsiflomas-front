@@ -1,0 +1,12 @@
+<!-- <form class="uk-form">
+    <input [(ngModel)]="filter" placeholder="chercher une figurine">
+  </form> -->
+<!-------------------------liste les produits------------------------->
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let elem of lesProduits">
+      <!-- | filter:searchText -->
+      <app-produit [produit]="elem"></app-produit>
+    </div>
+  </div>
+</div>

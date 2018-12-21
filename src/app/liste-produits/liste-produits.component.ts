@@ -19,7 +19,7 @@ export class ListeProduitsComponent implements OnInit {
   constructor(private _produitService: ProduitService, private _authService: AuthService) {
     //utilise produit.service dans le dossier ServiceFolder
     this._produitService.listerProduits().then(col => this.lesProduits = col)
-    this._authService.verifierAuthentification().subscribe(v => this.visiteur = v)
+    this._authService.collegueConnecteObs.subscribe(v => this.visiteur = v)
   }
 
   ngOnInit() {

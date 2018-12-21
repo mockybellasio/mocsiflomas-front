@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Collegue } from '../auth/auth.domains';
-import { AuthService } from '../auth/auth.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../ModelFolder/Produit';
-import { PanierService } from '../panier/panier.service';
+import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../ServiceFolder/produit.service';
+import { PanierService } from '../panier/panier.service';
+import { AuthService } from '../auth/auth.service';
+import { Collegue } from '../auth/auth.domains';
 
 @Component({
   selector: 'app-details-produits',
   templateUrl: `./details-produits.component.html`,
-  styleUrls: ['./details-produit.component.scss']
+  styles: []
 })
 export class DetailsProduitsComponent implements OnInit {
-  visiteur: Collegue
-  produit: Produit
+
+  @Input() produit: Produit
+  visiteur : Collegue
+  prod: Produit
   nomFigurine: string
   qte: number;
 
@@ -25,7 +27,7 @@ export class DetailsProduitsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   ajouterProduit() {

@@ -12,7 +12,13 @@ export class CollegueService {
 
   constructor(private _http: HttpClient) { }
 
-  chercherParEmail(email: string): Observable<Collegue> {
-    return this._http.get<Collegue>(URL_BACKEND + `gestion-produit/${email}`)
+ // chercherParEmail(email: string): Observable<Collegue> {
+    //return this._http.get<Collegue>(URL_BACKEND + `gestion-produit/${email}`)
+
+  
+    chercherParNom(nom: string): Promise<Collegue> {
+      return this._http.get<Collegue>(URL_BACKEND + `collegue/profil/${nom}`).toPromise();
+
+
   }
 }

@@ -19,11 +19,16 @@ import { ListeProduitsComponent } from './liste-produits/liste-produits.componen
 import { MenuComponent } from './menu/menu.component';
 import { ModifierUnProduitComponent } from './modifier-un-produit/modifier-un-produit.component';
 import { MonCompteComponent } from './mon-compte/mon-compte.component';
-import { ProduitComponent } from "./produit/produit.component";
-import { TechComponent } from './tech/tech.component';
 import { PanierComponent } from './panier/panier.component';
-import { RecherchePipe } from './pipes/recherche.pipe';
-import { RechercheComponent } from './recherche/recherche.component';
+import { ProduitComponent } from "./produit/produit.component";
+import { RecherchePipeComponent } from "./recherche-pipe/recherche-pipe.component";
+import { TechComponent } from './tech/tech.component';
+<<<<<<< HEAD
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
+import { ListeCommandeAdminComponent } from './liste-commande-admin/liste-commande-admin.component';
+
+=======
+>>>>>>> 367a6c46182212a021096a24be44c7828b48a6d3
 
 
 const routes: Routes = [
@@ -38,9 +43,11 @@ const routes: Routes = [
   { path: 'liste-figurines', component: ListeProduitsComponent },
   { path: 'produits', component: ProduitComponent },
   { path: 'details-produits/:nomFigurine', component: DetailsProduitsComponent },
-  { path: 'collegue/modifier', component: MonCompteComponent },
-  { path: 'collegue', component: DetailCollegueComponent },
-  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent }
+  { path: 'gestion-produit/allCommande', component: ListeCommandeAdminComponent },
+  { path: 'collegue/moncompte', component: MonCompteComponent },
+  { path: 'collegue/modifier', component: DetailCollegueComponent },
+  { path: 'gestion-produit/modif-produit/:nomFigurine', component: ModifierUnProduitComponent },
+  { path: 'recherche-pipe', component: RecherchePipeComponent }
 ];
 
 
@@ -63,8 +70,9 @@ const routes: Routes = [
     MonCompteComponent,
     MonCompteComponent,
     DetailCollegueComponent,
-    RecherchePipe,
-    RechercheComponent,
+    ListeCommandeAdminComponent,
+    RecherchePipeComponent
+
   ],
   imports: [
     BrowserModule,

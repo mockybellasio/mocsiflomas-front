@@ -1,33 +1,46 @@
 
-import { Component, OnInit, Input } from '@angular/core';
-import { FormUser, User } from '../ModelFolder/FormUser';
-import { ActivatedRoute } from '@angular/router';
-import { CollegueService } from '../ServiceFolder/collegue.service';
-import { Collegue } from '../auth/auth.domains';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../ModelFolder/FormUser';
+import { DetailCollegueService } from './detail-collegue.service';
+
 // import { UserService} from '../ServiceFolder/collegue.service'
 
 @Component({
   selector: 'app-detail-collegue',
-  template: `
-    <p>
-      detail-collegue works!
-    </p>
-  `,
+ templateUrl: './detail-collegue.component.html',
+    
   styles: []
 })
 export class DetailCollegueComponent implements OnInit {
-  user: Collegue
-  nom: string
-  email: string
+  
+file;
 
-  constructor(private route: ActivatedRoute, private _collegueService: CollegueService) {
+  monModel= new User();
+  messageError: string;
+  verif: string;
 
-    this.nom = route.snapshot.paramMap.get("nomCollegue")
-    this._collegueService.chercherParEmail(this.user.email)
-    .subscribe(u => this.user = u)
+  constructor(protected _detailService: DetailCollegueService, private router: Router) {
   }
-
   ngOnInit() {
   }
 
-}
+  submit() {
+    
+      if (this.file) {
+        this._detailService.creerCollegue(this.file).subscribe(col => {
+          this._detailService.modifierCollegue(this.monModel, col)
+            .then(() => this.router.navigate(['/collegue/moncompte']).catch(() => console.log("toto")))
+        });
+      } else {
+        this._detailService.modifierCollegue(this.monModel, undefined)
+          .then(() => this.router.navigate(['/collegue/moncompte']))
+          .catch(error=>{this.messageError=error.error.message; console.log(error);})
+        
+      }
+  
+    }
+
+  }
+
+
