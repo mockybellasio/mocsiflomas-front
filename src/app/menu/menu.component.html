@@ -45,8 +45,7 @@
             se connecter
         </button>
         <button type="button" class="btn dark indigo" routerLink="/panier">
-            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" 
-                height="30" alt="mdb logo">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
         </button>
     </div>
 
@@ -57,7 +56,7 @@
             dropdown>
             Gestion Produits
         </button>
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok"  routerLink="gestion-produit/allCommande">
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo nav-item dropdown" id="ok" routerLink="gestion-produit/allCommande">
             Gestion Commandes Clients
         </button>
     </div>
@@ -68,22 +67,19 @@
             Mes commandes
         </button>
 
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo " id="ok" routerLink="/collegue/moncompte"dropdown>
-           mon compte
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo " id="ok" routerLink="/collegue/moncompte"
+            dropdown>
+            mon compte
         </button>
 
         <button type="button" routerLink="/panier" class="btn dark indigo">
-            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" 
-                height="30" alt="mdb logo">
+            <img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" height="30" alt="mdb logo">
         </button>
     </div>
 
     <div *ngIf="!visiteur.estAnonyme()">
-        <button dropdownToggle mdbWavesEffect class="btn dark indigo" id="ok" (click)="seDeconnecter()"
-            dropdown>
+        <button dropdownToggle mdbWavesEffect class="btn dark indigo" id="ok" (click)="seDeconnecter()" dropdown>
             Se déconnecter
         </button>
     </div>
 </nav>
-
-
