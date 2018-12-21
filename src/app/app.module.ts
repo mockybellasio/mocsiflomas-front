@@ -23,12 +23,8 @@ import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { RecherchePipeComponent } from "./recherche-pipe/recherche-pipe.component";
 import { TechComponent } from './tech/tech.component';
-<<<<<<< HEAD
-import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { ListeCommandeAdminComponent } from './liste-commande-admin/liste-commande-admin.component';
 
-=======
->>>>>>> 367a6c46182212a021096a24be44c7828b48a6d3
 
 
 const routes: Routes = [
