@@ -13,17 +13,12 @@ export class FormInscriptionService {
 
   constructor(private _http: HttpClient) { }
 
-
   CreateUser(file): Observable<any> {
-
-    console.log("creat");
 
     return this._http.post(URL_BACKEND + 'collegue/upload/' + file.name, file, { responseType: 'text' });
   }
 
   saveClient(form, img): Promise<any> {
-
-    console.log("save")
 
     return this._http.post(URL_BACKEND.concat("collegue/nouveau"),
 

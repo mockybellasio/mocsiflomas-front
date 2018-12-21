@@ -27,8 +27,6 @@ export class PanierService {
       panierArray.forEach(element => {
         //si le panier contien dejat un élément du même nom alors met a jour élément 
         if (element[0].nomFigurine == elementArray[0][0].nomFigurine) {
-          console.log(elementArray[0][1]);
-
           element[1] = elementArray[0][1];
           upadate = true
         }
@@ -43,7 +41,6 @@ export class PanierService {
       localStorage.setItem('panier', JSON.stringify(arrayPanier));
     } else {
       mapPanier.set(pops, qte);
-      //console.log(pops,qte);
       let arrayPanier = Array.from((mapPanier))
       localStorage.setItem('panier', JSON.stringify(arrayPanier));
     }
@@ -66,9 +63,7 @@ export class PanierService {
       //si le panier contien dejat un élément du même nom alors met a jour élément 
       if (element[0].nomFigurine == elem.nomFigurine) {
         let mapPanier = new Map(panierArray);
-        console.log(mapPanier)
         mapPanier.delete(element[0])
-        console.log(mapPanier)
         let arrayPanier = Array.from((mapPanier))
         localStorage.setItem('panier', JSON.stringify(arrayPanier));
       }

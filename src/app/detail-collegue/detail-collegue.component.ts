@@ -30,12 +30,12 @@ file;
       if (this.file) {
         this._detailService.creerCollegue(this.file).subscribe(col => {
           this._detailService.modifierCollegue(this.monModel, col)
-            .then(() => this.router.navigate(['/collegue/moncompte']).catch(() => console.log("toto")))
+            .then(() => this.router.navigate(['/collegue/moncompte']).catch((error) => this.messageError=error.error.message))
         });
       } else {
         this._detailService.modifierCollegue(this.monModel, undefined)
           .then(() => this.router.navigate(['/collegue/moncompte']))
-          .catch(error=>{this.messageError=error.error.message; console.log(error);})
+          .catch(error=>this.messageError=error.error.message)
         
       }
   

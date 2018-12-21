@@ -10,8 +10,36 @@
         </div>
         <div class="col-6">
             <div class="row">
-                <input class="row" [(ngModel)]="qte" type="number" placeholder="Quantité">
-                <button class="row" (click)="ajouterProduit()">Ajouter au panier</button>
+                <input class="col" [(ngModel)]="qte" type="number" placeholder="Quantité">
+                <button type="button" mdbBtn color="primary" class="col btn-sm" (click)="ajouterProduit()" (click)="basicModal.show()">Ajouter au panier</button>
+            </div>
+
+            <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title w-100" id="myModalLabel">Votre produis a bien été ajouté au panier</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                                        (click)="basicModal.hide()" mdbWavesEffect routerLink="/accueil">Continuer achat</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" mdbBtn color="primary" class="relative waves-light"
+                                        mdbWavesEffect routerLink="/panier">Voire panier</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-------------------------Si c'est un administrateur------------------------->
@@ -23,7 +51,7 @@
                 </div>
                 <button class="row-1  btn btn-sm">Activer/Desactiver</button>
             </div>
-
+            
         </div>
     </div>
 </div>

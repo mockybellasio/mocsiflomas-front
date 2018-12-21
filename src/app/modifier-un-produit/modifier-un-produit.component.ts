@@ -41,6 +41,5 @@ export class ModifierUnProduitComponent implements OnInit {
 
   onFileChanged(event) {
     this.file = event.target.files[0];
-    console.log(this.file);
   }
 }

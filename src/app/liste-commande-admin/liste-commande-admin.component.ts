@@ -7,10 +7,19 @@ import { ListeCommandeAdminService } from './liste-commande-admin.service';
   styles: []
 })
 export class ListeCommandeAdminComponent implements OnInit {
+  listCommande:any;
 
   constructor(private _listComService: ListeCommandeAdminService) {
-    this._listComService.readAllCommande().subscribe(col=>console.log(col))
-   }
+    this._listComService.readAllCommande().subscribe(col=>this.listCommande=col)
+  }
+ 
+sommeTotal(elem):number{
+  var total:number=0;
+  elem.achat.forEach(element => {
+    total+=element.achatProduits.prix*element.quantité;
+  });
+ return total;
+}
 
   ngOnInit() {
   }
