@@ -19,16 +19,15 @@ export class FormInscriptionComponent implements OnInit {
 
   submit() {
     if (this.monModel.verifPassWord(this.verif)) {
-      console.log(this.monModel)
       if (this.file) {
         this.pService.CreateUser(this.file).subscribe(col => {
           this.pService.saveClient(this.monModel, col)
-            .then(() => this.router.navigate(['/auth']).catch(error => console.log("toto")))
+            .then(() => this.router.navigate(['/auth']).catch(error => this.messageError = error.error.message))
         });
       } else {
         this.pService.saveClient(this.monModel, undefined)
           .then(() => this.router.navigate(['/auth']))
-          .catch(error => { this.messageError = error.error.message; console.log(error); })
+          .catch(error => this.messageError = error.error.message)
 
       }
     } else {
@@ -42,7 +41,6 @@ export class FormInscriptionComponent implements OnInit {
 
   onFileChanged(event) {
     this.file = event.target.files[0];
-    console.log(this.file);
   }
 
   test(value) {

@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthComponent } from './auth/auth.component';
 import { StatutConnecteService } from "./auth/statut-connecte.service";
-import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { DetailsProduitsComponent } from './details-produits/details-produits.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
@@ -23,6 +22,7 @@ import { PanierComponent } from './panier/panier.component';
 import { ProduitComponent } from "./produit/produit.component";
 import { RecherchePipeComponent } from "./recherche-pipe/recherche-pipe.component";
 import { TechComponent } from './tech/tech.component';
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { ListeCommandeAdminComponent } from './liste-commande-admin/liste-commande-admin.component';
 
 

@@ -3,10 +3,18 @@
   </form> -->
 <!-------------------------liste les produits------------------------->
 <div class="container">
-  <div class="row">
-    <div class="col-3" *ngFor="let elem of lesProduits">
-      <!-- | filter:searchText -->
-      <app-produit [produit]="elem"></app-produit>
+  <div class="row" *ngFor="let elem of listCommande">
+    <div class="col-3" >     
+      {{elem.numero}}
+    </div>
+    <div class="col-3" >     
+      {{elem.comClient.nom}}
+    </div>
+    <div class="col-3" >     
+      {{sommeTotal(elem)}}€
+    </div>
+    <div class="col-3" >     
+      {{elem.dateCommande}}
     </div>
   </div>
 </div>
